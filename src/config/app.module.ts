@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { LandingModule } from '../landing/landing.module';
+import { LandingModule } from '../modules/landing/landing.module';
 
 @Module({
   imports: [

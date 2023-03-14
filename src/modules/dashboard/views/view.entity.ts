@@ -3,18 +3,21 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 
 @Entity()
-export class admin {
+export class view {
 
     @PrimaryGeneratedColumn()
     id: number;
 
     @Column()
-    usuario_id : Number;
+    usuario_id : number;
+
 
     @Column()
-    video_id : String;
+    video_id : number;
 
     @Column()
-    fecha_agregado : Date;
+    fecha_vista : Date;
+
+
 
 }

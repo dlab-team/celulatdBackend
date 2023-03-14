@@ -1,5 +1,5 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
-import { LandingService } from '../service/landing.service';
+import { LandingService } from './landing.service';
 
 //para el contador de click debemos usar put para actualizar una fila, lo mismo con delete y get:id
 //solo debmos mostrar una fila

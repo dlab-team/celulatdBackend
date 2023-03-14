@@ -3,7 +3,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 
 @Entity()
-export class admin {
+export class notifications {
 
     @PrimaryGeneratedColumn()
     id: number;
@@ -12,11 +12,13 @@ export class admin {
     usuario_id : number;
 
     @Column()
-    video_id : number;
+    mensaje : string;
 
     @Column()
-    fecha_vista : Date;
+    leido : boolean;
 
+    @Column()
+    fecha_envio: Date;
 
 
 }

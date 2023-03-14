@@ -3,22 +3,18 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 
 @Entity()
-export class admin {
+export class clickcount {
 
     @PrimaryGeneratedColumn()
     id: number;
 
     @Column()
-    usuario_id : number;
+    nombre : String;
 
     @Column()
-    mensaje : string;
+    usuario_id : Number;
 
     @Column()
-    leido : boolean;
-
-    @Column()
-    fecha_envio: Date;
-
+    number_click : Number;
 
 }

@@ -3,7 +3,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 
 @Entity()
-export class admin {
+export class video {
 
     @PrimaryGeneratedColumn()
     id: number;
