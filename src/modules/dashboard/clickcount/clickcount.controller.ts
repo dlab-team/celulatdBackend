@@ -2,13 +2,13 @@ import { Controller } from "@nestjs/common";
 import { BaseController } from "src/commons/controller.commons";
 import { BaseService } from "src/commons/service.commons";
 import { clickcount } from "./clickcount.entity";
-import { ClickcountService } from "./clickcount.service";
+import { clickcountService } from "./clickcount.service";
 
 
 @Controller('api/clickcount')
-export class ClickcountController extends BaseController<clickcount> {
+export class clickcountController extends BaseController<clickcount> {
 
-    constructor(private readonly clickcountService: ClickcountService) {
+    constructor(private readonly clickcountService: clickcountService) {
         super();
     }
 

@@ -5,7 +5,7 @@ import { Admin } from "./admin.entity";
 import { AdminService } from "./admin.service";
 
 @Controller('api/admin')
-export class AdminController extends BaseController<Admin> {
+export class adminController extends BaseController<Admin> {
 
     constructor(private readonly adminService: AdminService) {
         super();

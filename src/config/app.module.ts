@@ -1,6 +1,8 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { LandingModule } from '../modules/landing/landing.module';
+import {DashboardModule} from "../modules/dashboard/dashboard.modules";
+import {UserModule} from "../modules/user/user.module";
 
 @Module({
   imports: [
@@ -16,11 +18,10 @@ import { LandingModule } from '../modules/landing/landing.module';
       retryDelay: 3000,
       retryAttempts: 10
     
-    }),
-    
-      
+    }),DashboardModule,
+    UserModule,
     LandingModule],
-  controllers: [],
-  providers: [],
+   controllers: [],
+   providers: [],
 })
 export class AppModule {}

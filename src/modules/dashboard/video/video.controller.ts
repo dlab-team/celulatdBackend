@@ -1,19 +1,19 @@
 import { Controller } from "@nestjs/common";
 import { BaseController } from "src/commons/controller.commons";
 import { BaseService } from "src/commons/service.commons";
-import { video } from "./video.entity";
-import { videoService } from "./video.Service";
+import { Video } from "./video.entity";
+import { VideoService } from "./video.service";
 
 
 @Controller('api/video')
-export class videoController extends BaseController<video> {
+export class VideoController extends BaseController<Video> {
 
-    constructor(private readonly videoService: videoService) {
+    constructor(private readonly VideoService: VideoService) {
         super();
     }
 
-    getService(): BaseService<video> {
-        return this.videoService;
+    getService(): BaseService<Video> {
+        return this.VideoService;
     }
 
 }

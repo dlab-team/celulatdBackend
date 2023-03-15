@@ -3,7 +3,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 
 @Entity()
-export class video {
+export class Video {
 
     @PrimaryGeneratedColumn()
     id: number;

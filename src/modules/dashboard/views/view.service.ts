@@ -2,17 +2,17 @@ import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { BaseService } from "src/commons/service.commons";
 import { Repository } from "typeorm";
-import { view } from "./view.entity";
+import { View } from "./View.entity";
 
 @Injectable()
-export class viewService extends BaseService<view> {
+export class ViewService extends BaseService<View> {
 
-    constructor(@InjectRepository(view) private viewRepository : Repository<view>) {
+    constructor(@InjectRepository(View) private ViewRepository : Repository<View>) {
         super();
     }
 
-    getRepository(): Repository<view> {
-        return this.viewRepository;
+    getRepository(): Repository<View> {
+        return this.ViewRepository;
     }
 
 }

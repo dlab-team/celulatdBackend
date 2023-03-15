@@ -2,16 +2,16 @@ import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { BaseService } from "src/commons/service.commons";
 import { Repository } from "typeorm";
-import { notifications } from "./notification.entity";
+import { Notification } from "./notification.entity";
 
 @Injectable()
-export class notificationService extends BaseService<notifications> {
+export class notificationService extends BaseService<Notification> {
 
-    constructor(@InjectRepository(notifications) private notificationsRepository : Repository<notifications>) {
+    constructor(@InjectRepository(Notification) private notificationsRepository : Repository<Notification>) {
         super();
     }
 
-    getRepository(): Repository<notifications> {
+    getRepository(): Repository<Notification> {
         return this.notificationsRepository;
     }
 

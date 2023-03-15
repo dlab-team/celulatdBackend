@@ -5,7 +5,7 @@ import { Repository } from "typeorm";
 import { clickcount } from "./clickcount.entity";
 
 @Injectable()
-export class ClickcountService extends BaseService<clickcount> {
+export class clickcountService extends BaseService<clickcount> {
 
     constructor(@InjectRepository(clickcount) private ClickcountRepository : Repository<clickcount>) {
         super();

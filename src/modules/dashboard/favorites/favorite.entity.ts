@@ -3,7 +3,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 
 @Entity()
-export class favorites {
+export class Favorite {
 
     @PrimaryGeneratedColumn()
     id: number;

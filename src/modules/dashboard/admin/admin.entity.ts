@@ -32,6 +32,4 @@ export class Admin {
     @Column()
     estado : String;
 
-
-
 }
