@@ -1,20 +1,21 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
+import { Usuario } from "src/modules/user/user.entity";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Videos } from "../video/videos.entity";
 
 
 @Entity()
 export class Favorite {
+ 
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @PrimaryGeneratedColumn()
-    id: number;
+  @ManyToOne(() => Usuario, usuario => usuario.favoritos)
+  usuario: Usuario;
 
-    @Column()
-    usuario_id : Number;
+  @ManyToOne(() => Videos, videos => videos.favoritos)
+  video: Videos;
 
-    @Column()
-    video_id : String;
-
-    @Column()
-    fecha_agregado : Date;
-
+  @Column()
+  fecha_agregado: string;
 }

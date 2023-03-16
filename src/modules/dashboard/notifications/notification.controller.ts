@@ -1,14 +1,14 @@
 import { Controller } from "@nestjs/common";
 import { BaseController } from "src/commons/controller.commons";
 import { BaseService } from "src/commons/service.commons";
-import { Notification } from "./notification.entity";
-import { notificationService } from "./notification.service";
+
+import { NotificationService } from "./notification.service";
 
 
 @Controller('api/notifications')
-export class notificationController extends BaseController<Notification> {
+export class NotificationController extends BaseController<Notification> {
 
-    constructor(private readonly notificationsService: notificationService) {
+    constructor(private readonly notificationsService: NotificationService) {
         super();
     }
 

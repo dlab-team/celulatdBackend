@@ -14,7 +14,7 @@ import {UserModule} from "../modules/user/user.module";
       password: 'admin',
       database: 'celulatd_database',
       entities: ['dist/**/*.entity{.ts,.js}'],
-      synchronize: false,
+      synchronize: true,
       retryDelay: 3000,
       retryAttempts: 10
     

@@ -4,8 +4,9 @@ import { BaseService } from "src/commons/service.commons";
 import { Repository } from "typeorm";
 import { Favorite } from "./favorite.entity";
 
+
 @Injectable()
-export class favoriteService extends BaseService<Favorite> {
+export class FavoriteService extends BaseService<Favorite> {
 
     constructor(@InjectRepository(Favorite) private FavoriteRepository : Repository<Favorite>) {
         super();

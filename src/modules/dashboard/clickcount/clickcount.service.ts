@@ -2,16 +2,18 @@ import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { BaseService } from "src/commons/service.commons";
 import { Repository } from "typeorm";
-import { clickcount } from "./clickcount.entity";
+import { Clickcount } from "./clickcount.entity";
+
+
 
 @Injectable()
-export class clickcountService extends BaseService<clickcount> {
+export class ClickcountService extends BaseService<Clickcount> {
 
-    constructor(@InjectRepository(clickcount) private ClickcountRepository : Repository<clickcount>) {
+    constructor(@InjectRepository(Clickcount) private ClickcountRepository : Repository<Clickcount>) {
         super();
     }
 
-    getRepository(): Repository<clickcount> {
+    getRepository(): Repository<Clickcount> {
         return this.ClickcountRepository;
     }
 

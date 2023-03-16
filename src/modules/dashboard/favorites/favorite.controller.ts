@@ -2,13 +2,14 @@ import { Controller } from "@nestjs/common";
 import { BaseController } from "src/commons/controller.commons";
 import { BaseService } from "src/commons/service.commons";
 import { Favorite } from "./favorite.entity";
-import { favoriteService } from "./favorite.service";
+
+import { FavoriteService } from "./favorite.service";
 
 
 @Controller('api/favorites')
-export class favoriteController extends BaseController<Favorite> {
+export class FavoriteController extends BaseController<Favorite> {
 
-    constructor(private readonly favoritesService: favoriteService) {
+    constructor(private readonly favoritesService: FavoriteService) {
         super();
     }
 
