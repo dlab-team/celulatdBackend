@@ -1,8 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { LandingModule } from './modules/landing/landing.module';
-import {DashboardModule} from "./modules/dashboard/dashboard.modules";
-import {UserModule} from "./modules/user/user.module";
+import { ApiModule } from './api/api.module';
+
 
 @Module({
   imports: [
@@ -10,18 +9,18 @@ import {UserModule} from "./modules/user/user.module";
       type: 'postgres',
       host: 'localhost',
       port: 5432,
-      username: 'postgres',
-      password: 'admin',
-      database: 'celulatd_database',
+      username: 'jona',
+      password: '1234',
+      database: 'test2',
       entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: true,
       retryDelay: 3000,
-      retryAttempts: 10
-    
-    }),DashboardModule,
-    UserModule,
-    LandingModule],
-   controllers: [],
-   providers: [],
+      retryAttempts: 10,
+    }),
+    ApiModule,
+
+  ],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
