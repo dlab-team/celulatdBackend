@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import {adminModules} from "./admin/admin.module";
 import {clickcountModules} from "./clickcount/clickcount.module";
-import {favoriteModules} from "./favorites/favorite.module";
+
 import {notificationModules} from "./notifications/notification.module";
 import {VideoModules} from "./video/video.module";
 
@@ -12,7 +12,6 @@ import {VideoModules} from "./video/video.module";
         adminModules,
         notificationModules,
         clickcountModules,
-        favoriteModules,
         VideoModules,
 
     ],
@@ -20,7 +19,6 @@ import {VideoModules} from "./video/video.module";
         adminModules,
         clickcountModules,
         notificationModules,
-        favoriteModules,
         VideoModules,
     ],
     controllers: [],

@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { LandingModule } from '../modules/landing/landing.module';
-import {DashboardModule} from "../modules/dashboard/dashboard.modules";
-import {UserModule} from "../modules/user/user.module";
+import { LandingModule } from './modules/landing/landing.module';
+import {DashboardModule} from "./modules/dashboard/dashboard.modules";
+import {UserModule} from "./modules/user/user.module";
 
 @Module({
   imports: [
