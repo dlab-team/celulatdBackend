@@ -1,7 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Usuario } from '../entities/registerUser.entity';
+import { User } from '../entities/user.entity';
+
 
 
 
@@ -10,19 +11,19 @@ import { Usuario } from '../entities/registerUser.entity';
 @Injectable()
 export class RegisterService {
     constructor(
-        @InjectRepository(Usuario) 
-        private RegisterRepo: Repository<Usuario> 
+        @InjectRepository(User) 
+        private RegisterRepo: Repository<User> 
     ) {}
     
-    //busca todo get 
+    //find all get 
     findAll(){
         this.RegisterRepo.find();
     }
-    //busca de forma individual get por id 
-    findOne(id: number): Promise<Usuario> {
+    // get for id 
+    findOne(id: number): Promise<User> {
         return this.RegisterRepo.findOneBy({id:id});
     }
-    //crea el post
+    //create post
     create(body: any) {
         const newTask = this.RegisterRepo.create(body);
         
