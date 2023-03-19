@@ -30,36 +30,33 @@ export class VideoService {
     throw new NotFoundException(`No encontramos el usuario ${id}`)
   }
   //crea el post
-     create(body: any) {
+     create(body: VideoDto) {
         const newVideo = this.videoRepository.create(body);
         
         return this.videoRepository.save(newVideo);
     }
-        // borra por id (delete)
-     async delete(id: number) {
+       
+  // borra por id (delete)
+   async delete(id: number) {
          await this.videoRepository.delete(id);
          return true;
+   }
+
+  //busca todo
+     findAll(){
+         this.videoRepository.find();
      }
 
-    // constructor(
-    //     @InjectRepository(Admin) 
-    //     private AdminRepo: Repository<Admin> 
-    // ) {}
-    
-    // //busca todo get 
-    // findAll(){
-    //     this.AdminRepo.find();
-    // }
-    // //busca de forma individual get por id 
-    // findOne(id: number): Promise<Admin> {
-    //     return this.AdminRepo.findOneBy({id:id});
-    // }
-    // 
-    // //actualiza por id(put)
-    // async update(id: number, body: any){
-    //     const Admin = await this.AdminRepo.findOneBy({id:id});
-    //     this.AdminRepo.merge(Admin, body);
-    //     return this.AdminRepo.save(Admin)
-    // }
+    //busca de forma individual get por id 
+     findOne(id: number) {
+         return this.videoRepository.findOneBy({id:id});
+     }
+     
+    // actualiza por id(put)
+     async update(id: number, body: VideoDto){
+         const video = await this.videoRepository.findOneBy({id:id});
+         this.videoRepository.merge(video, body);
+         return this.videoRepository.save(video)
+     }
 
 }
