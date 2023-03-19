@@ -1,10 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import { User } from 'src/entities/user.entity';
 import { Repository } from 'typeorm';
-import { User } from '../entities/user.entity';
-
-
-
 
 
 
@@ -25,9 +22,9 @@ export class RegisterService {
     }
     //create post
     create(body: any) {
-        const newTask = this.RegisterRepo.create(body);
+        const newUser = this.RegisterRepo.create(body);
         
-        return this.RegisterRepo.save(newTask);
+        return this.RegisterRepo.save(newUser);
     }
     //actualiza por id(put)
     async update(id: number, body: any){

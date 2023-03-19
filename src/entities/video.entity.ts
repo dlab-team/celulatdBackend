@@ -1,4 +1,3 @@
-import { User } from 'src/registerUser/entities/user.entity';
 import {
   Entity,
   Column,
@@ -8,6 +7,7 @@ import {
  
   ManyToOne,
 } from 'typeorm';
+import { User } from './user.entity';
 import { View } from './view.entity';
 
 

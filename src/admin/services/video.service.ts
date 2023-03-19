@@ -1,12 +1,9 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { VideoDto } from 'src/dto/video.dto/video.dto';
-import { User } from 'src/registerUser/entities/user.entity';
+import { User } from 'src/entities/user.entity';
+import { Video } from 'src/entities/video.entity';
 import { Repository } from 'typeorm';
-import { Video } from '../entities/video.entity';
-
-
-
 
 
 
@@ -32,6 +29,17 @@ export class VideoService {
     }
     throw new NotFoundException(`No encontramos el usuario ${id}`)
   }
+  //crea el post
+     create(body: any) {
+        const newVideo = this.videoRepository.create(body);
+        
+        return this.videoRepository.save(newVideo);
+    }
+        // borra por id (delete)
+     async delete(id: number) {
+         await this.videoRepository.delete(id);
+         return true;
+     }
 
     // constructor(
     //     @InjectRepository(Admin) 
@@ -46,21 +54,12 @@ export class VideoService {
     // findOne(id: number): Promise<Admin> {
     //     return this.AdminRepo.findOneBy({id:id});
     // }
-    // //crea el post
-    // create(body: any) {
-    //     const newTask = this.AdminRepo.create(body);
-        
-    //     return this.AdminRepo.save(newTask);
-    // }
+    // 
     // //actualiza por id(put)
     // async update(id: number, body: any){
     //     const Admin = await this.AdminRepo.findOneBy({id:id});
     //     this.AdminRepo.merge(Admin, body);
     //     return this.AdminRepo.save(Admin)
     // }
-    // //borra por id (delete)
-    // async delete(id: number) {
-    //     await this.AdminRepo.delete(id);
-    //     return true;
-    // }
+
 }

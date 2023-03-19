@@ -3,6 +3,7 @@ import {
   Controller,
   HttpCode,
   HttpStatus,
+  Param,
   Post
 } from '@nestjs/common';
 
@@ -16,17 +17,26 @@ export class AdminController {
   
   constructor(private videoService: VideoService) {}
 
+// post para crear Video 
 
-  // @Post()
-  // create(@Body() body: any) {
-  //   return this.adminService.create(body);
-  // }
-  
-  @Post('up-video')
-@HttpCode(HttpStatus.NO_CONTENT)
-createProduct(
+   @Post('up-video')
+   create(@Body() body: any) {
+     return this.videoService.create(body);
+   }
+   
+  // post para crear Video por id
+
+  @Post('up-video/:id')
+  @HttpCode(HttpStatus.NO_CONTENT)
+  createVideoId(
+  @Param('id') id: number,
   @Body() videoDto: VideoDto,
-) {
-  this.videoService.save(videoDto);
-}
+   ) {
+    console.log(videoDto)
+    this.videoService.saveVideo(id,videoDto);
+  }
+
+  //eliminar video
+  
+
 }

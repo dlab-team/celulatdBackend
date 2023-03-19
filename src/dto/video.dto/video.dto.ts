@@ -1,7 +1,5 @@
-export class VideoDto {
 
-}
-export class ProductDto {
+export class VideoDto {
     title: string;
     description: string;
     duration: number;

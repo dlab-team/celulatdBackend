@@ -5,15 +5,10 @@ import {
     PrimaryGeneratedColumn,
     OneToMany,
   } from 'typeorm';
-
-import { Clickcount } from 'src/admin/entities/countclick.entity';
-import { Favorite } from 'src/admin/entities/favorite.entity';
-import { Video } from 'src/admin/entities/video.entity';
-import { Notification } from "src/admin/entities/notification.entity";
-  
-  
-  
-  
+import { Notification } from './notification.entity';
+import { Favorite } from './favorite.entity';
+import { Video } from './video.entity';
+import { Clickcount } from "./countclick.entity";
   
   @Entity()
   export class User {
@@ -45,7 +40,6 @@ import { Notification } from "src/admin/entities/notification.entity";
     @OneToMany(() => Clickcount, (clickcount) => clickcount.user)
     clickcount: Clickcount[];
 
-   
   
   }
   

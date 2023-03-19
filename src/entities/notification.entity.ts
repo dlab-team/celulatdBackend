@@ -1,7 +1,5 @@
-import { User } from "src/registerUser/entities/user.entity";
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-
-
+import { User } from "./user.entity";
 
 @Entity()
 export class Notification {

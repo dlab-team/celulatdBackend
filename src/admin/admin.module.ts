@@ -1,11 +1,8 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-
-
-
-import { Video } from './entities/video.entity';
-import { User } from 'src/registerUser/entities/user.entity';
-import { View } from './entities/view.entity';
+import { User } from 'src/entities/user.entity';
+import { Video } from 'src/entities/video.entity';
+import { View } from 'src/entities/view.entity';
 import { AdminController } from './controllers/admincontroller';
 import { VideoService } from './services/video.service';
 

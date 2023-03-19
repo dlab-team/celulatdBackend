@@ -2,8 +2,9 @@ import { Module } from '@nestjs/common';
 
 
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { User } from 'src/entities/user.entity';
 import { RegisterController } from './controllers/registerUser.controller';
-import { User } from './entities/user.entity';
+
 
 import { RegisterService } from './service/registerUser.service';
 

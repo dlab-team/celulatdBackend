@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AdminModule } from './admin/admin.module';
+import { RegisterModule } from './registerUser/registerUser.module';
 
 
 
@@ -19,6 +20,7 @@ import { AdminModule } from './admin/admin.module';
       retryAttempts: 10,
     }),
     AdminModule,
+    RegisterModule
   ],
   controllers: [],
   providers: [],
