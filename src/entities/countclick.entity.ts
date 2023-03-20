@@ -17,5 +17,4 @@ export class Clickcount {
   number_click: number;
 
 
-
 }

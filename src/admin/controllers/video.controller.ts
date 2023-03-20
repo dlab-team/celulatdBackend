@@ -14,24 +14,24 @@ import { VideoDto } from 'src/dto/video.dto/video.dto';
 import { VideoService } from "../services/video.service";
 
 
-@Controller('admin')
-export class AdminController {
+@Controller('video')
+export class VideoController {
   constructor(private videoService: VideoService) {}
 
   // post para crear Video
 
-  @Post('up-video')
+  @Post()
   create(@Body() body: any) {
     return this.videoService.create(body);
   }
-
+  
   // post para crear Video por id
 
-  @Post('up-video/:id')
+  @Post(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
   createVideoId(@Param('id') id: number, @Body() videoDto: VideoDto) {
     console.log(videoDto);
-    this.videoService.saveVideo(id, videoDto);
+    this.videoService.saveVideoId(id, videoDto);
   }
   //eliminar video
 
@@ -41,18 +41,18 @@ export class AdminController {
   }
 
   //ver por id
-  @Get('video/:id')
+  @Get(':id')
   getOne(@Param('id') id: number) {
     return this.videoService.findOne(id);
   }
   //ver todo
-  @Get('video')
+  @Get()
   getAll() {
     return this.videoService.findAll();
   }
 
   //actualizar por id
-  @Put('video/:id')
+  @Put(':id')
   update(@Param('id') id: number, @Body() body: any) {
     return this.videoService.update(id, body);
   }

@@ -7,7 +7,6 @@ import { Video } from './video.entity';
 export class View {
   @PrimaryGeneratedColumn()
   id: number;
-
   
   @OneToOne(() => Video)
   @JoinColumn({ name: 'video_id' })
@@ -15,6 +14,4 @@ export class View {
 
   @Column()
   date_view: string;
-
-
 }

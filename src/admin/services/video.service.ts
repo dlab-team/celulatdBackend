@@ -5,8 +5,6 @@ import { User } from 'src/entities/user.entity';
 import { Video } from 'src/entities/video.entity';
 import { Repository } from 'typeorm';
 
-
-
 @Injectable()
 export class VideoService {
   [x: string]: any;
@@ -18,7 +16,7 @@ export class VideoService {
     private videoRepository: Repository<Video>,
   ) { }
 
-  async saveVideo(id: number, body: VideoDto) {
+  async saveVideoId(id: number, body: VideoDto) {
     const user = await this.userRepository.findOneBy({id:id});
     console.log(user, id);
     if (user) {

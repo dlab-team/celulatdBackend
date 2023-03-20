@@ -24,6 +24,7 @@ import { Clickcount } from "./countclick.entity";
   
     @Column()
     password: string;
+    
     @Column()
     foto: string;
   
