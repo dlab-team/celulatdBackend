@@ -9,7 +9,7 @@ import {
     Post,
     Put
   } from '@nestjs/common';
-import { FavoriteDto } from 'src/dto/video.dto/favorite.dto';
+import { FavoriteDto } from 'src/dto/favorite.dto';
 import { FavoriteService } from '../services/favorite.service';
   
   

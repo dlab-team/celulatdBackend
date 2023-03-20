@@ -9,8 +9,8 @@ import {
   Post,
   Put
 } from '@nestjs/common';
+import { VideoDto } from 'src/dto/video.dto';
 
-import { VideoDto } from 'src/dto/video.dto/video.dto';
 import { VideoService } from "../services/video.service";
 
 

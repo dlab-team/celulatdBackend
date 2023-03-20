@@ -9,7 +9,7 @@ import {
     Post,
     Put
   } from '@nestjs/common';
-import { ClickDto } from 'src/dto/video.dto/click.dto';
+import { ClickDto } from 'src/dto/click.dto';
 import { CountClickService } from '../services/countClick.service';
   
   

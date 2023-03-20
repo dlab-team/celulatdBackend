@@ -9,7 +9,7 @@ import {
     Post,
     Put
   } from '@nestjs/common';
-import { NotificationDto } from 'src/dto/video.dto/notification.dto';
+import { NotificationDto } from 'src/dto/notification.dto';
 import { NotificationService } from '../services/notification.service';
   
   

@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { VideoDto } from 'src/dto/video.dto/video.dto';
+import { VideoDto } from 'src/dto/video.dto';
 import { User } from 'src/entities/user.entity';
 import { Video } from 'src/entities/video.entity';
 import { Repository } from 'typeorm';

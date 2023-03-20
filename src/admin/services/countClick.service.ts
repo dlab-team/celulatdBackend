@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { ClickDto } from 'src/dto/video.dto/click.dto';
+import { ClickDto } from 'src/dto/click.dto';
 import { Clickcount } from 'src/entities/countclick.entity';
 import { Video } from 'src/entities/video.entity';
 import { Repository } from 'typeorm';

@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { FavoriteDto } from 'src/dto/video.dto/favorite.dto';
+import { FavoriteDto } from 'src/dto/favorite.dto';
 import { Favorite } from 'src/entities/favorite.entity';
 import { User } from 'src/entities/user.entity';
 import { Repository } from 'typeorm';

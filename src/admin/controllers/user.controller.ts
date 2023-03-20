@@ -6,7 +6,7 @@ import {
     Param,
     Put
   } from '@nestjs/common';
-import { UserDto } from 'src/dto/video.dto/user.dto';
+import { UserDto } from 'src/dto/user.dto';
 import { UserService } from '../services/user.services';
 
   
