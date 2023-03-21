@@ -29,28 +29,32 @@ export class CountClickService {
     }
     throw new NotFoundException(`No encontramos el el click asociado ${id}`)
   }
+
   //crea el post
+
   create(body: ClickDto) {
     const newVideo = this.clickRepository.create(body);
-    
     return this.videoRepository.save(newVideo);
 }
 
   // borra por id (delete)
+
    async delete(id: number) {
          await this.clickRepository.delete(id);
          return true;
    }
-    //busca de forma individual get por id 
-     findOne(id: number) {
-         return this.clickRepository.findOneBy({id:id});
-     }
-     
-    // actualiza por id(put)
-     async update(id: number, body: ClickDto){
-         const click = await this.clickRepository.findOneBy({id:id});
-         this.clickRepository.merge(click, body);
-         return this.clickRepository.save(click)
-     }
 
+  //busca de forma individual get por id 
+
+  findOne(id: number) {
+   return this.clickRepository.findOneBy({id:id});
+  }
+     
+  // actualiza por id(put)
+
+  async update(id: number, body: ClickDto){
+    const click = await this.clickRepository.findOneBy({id:id});
+    this.clickRepository.merge(click, body);
+    return this.clickRepository.save(click)
+  }
 }

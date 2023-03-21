@@ -19,10 +19,11 @@ import { FavoriteController } from './controllers/favorite.controller';
 import { NotificationController } from './controllers/notification.controller';
 import { Admin } from 'src/entities/admin.entity';
 import { Trash } from 'src/entities/trash.entity';
+import { ViewController } from './controllers/view.controllers';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Admin, Video, User, View, Clickcount, Favorite, Notification, Trash])],
   providers: [VideoService, UserService, ViewService, CountClickService, FavoriteService, NotificationService],
-  controllers: [VideoController, UserController, CountClickController, FavoriteController, NotificationController ],
+  controllers: [VideoController, UserController, CountClickController, FavoriteController, NotificationController, ViewController],
 })
 export class AdminModule {}

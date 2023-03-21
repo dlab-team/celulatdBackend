@@ -22,10 +22,13 @@ export class Video {
 
   @Column()
   title: string;
+
   @Column()
   description: string;
+
   @Column()
   duration: number;
+  
   @Column()
   route_archive: string;
 

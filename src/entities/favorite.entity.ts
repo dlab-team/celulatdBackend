@@ -13,9 +13,8 @@ export class Favorite {
   @ManyToOne(() => User, user => user.favorite)
   user: User;
 
-  @Column()
-  date_joined: string;
-  
+  @Column({ type: 'timestamptz' }) 
+  date_joined: Date;
 
   @ManyToOne(() => Video, video => video.favorite)
   video: Video;

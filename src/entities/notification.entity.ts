@@ -7,18 +7,22 @@ export class Notification {
 
   @PrimaryGeneratedColumn()
   id: number;
+
   @ManyToOne(() => User, user => user.notification)
   user: User;
+
   @Column()
   message: string;
+
   @Column()
   read: boolean;
+
   @Column({ type: 'timestamptz' }) 
   date_send: Date;
 
-   @OneToOne(() => Trash)
-   @JoinColumn({ name: 'trash_id' })
-   trash: Trash;
+  @OneToOne(() => Trash)
+  @JoinColumn({ name: 'trash_id' })
+  trash: Trash;
 
 
 

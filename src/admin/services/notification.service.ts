@@ -29,20 +29,24 @@ export class NotificationService {
   }
 
   // borra por id (delete)
-   async delete(id: number) {
-         await this.notificationRepository.delete(id);
-         return true;
-   }
-    //busca de forma individual get por id 
-     findOne(id: number) {
-         return this.notificationRepository.findOneBy({id:id});
-     }
+
+  async delete(id: number) {
+    await this.notificationRepository.delete(id);
+    return true;
+  }
+
+  //busca de forma individual get por id 
+
+  findOne(id: number) {
+    return this.notificationRepository.findOneBy({id:id});
+  }
      
-    // actualiza por id(put)
-     async update(id: number, body: NotificationDto){
-         const notification = await this.notificationRepository.findOneBy({id:id});
-         this.notificationRepository.merge(notification, body);
-         return this.notificationRepository.save(notification)
-     }
+  // actualiza por id(put)
+
+  async update(id: number, body: NotificationDto){
+    const notification = await this.notificationRepository.findOneBy({id:id});
+    this.notificationRepository.merge(notification, body);
+    return this.notificationRepository.save(notification)
+  }
 
 }

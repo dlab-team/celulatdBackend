@@ -19,7 +19,7 @@ export class ViewService {
     private videoRepository: Repository<Video>,
   ) { }
 
-  async saveView(id: number, body: ViewDto) {
+  async saveViewId(id: number, body: ViewDto) {
     const videoId = await this.videoRepository.findOneBy({id:id});
     if (videoId ) {
       const view = this.viewkRepository.create(body);
@@ -29,21 +29,25 @@ export class ViewService {
     }
     throw new NotFoundException(`No encontramos el el click asociado ${id}`)
   }
+
   //crea el post
+
   create(body: ViewDto) {
     const newView = this.viewRepository.create(body);
-    
     return this.viewRepository.save(newView);
-}
+  }
 
   // borra por id (delete)
-   async delete(id: number) {
-         await this.viewRepository.delete(id);
-         return true;
-   }
-    //busca de forma individual get por id 
-     findOne(id: number) {
-         return this.viewRepository.findOneBy({id:id});
-     }
+
+  async delete(id: number) {
+    await this.viewRepository.delete(id);
+    return true;
+  }
+
+  //busca de forma individual get por id 
+
+  findOne(id: number) {
+    return this.viewRepository.findOneBy({id:id});
+  }
   
 }

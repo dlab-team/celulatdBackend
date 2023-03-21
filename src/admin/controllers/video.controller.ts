@@ -10,9 +10,7 @@ import {
   Put
 } from '@nestjs/common';
 import { VideoDto } from 'src/dto/video.dto';
-
 import { VideoService } from "../services/video.service";
-
 
 @Controller('video')
 export class VideoController {
@@ -27,7 +25,7 @@ export class VideoController {
   
   // post para crear Video por id
 
-  @Post(':id')
+  @Post('/:id')
   @HttpCode(HttpStatus.NO_CONTENT)
   createVideoId(@Param('id') id: number, @Body() videoDto: VideoDto) {
     console.log(videoDto);
@@ -41,7 +39,7 @@ export class VideoController {
   }
 
   //ver por id
-  @Get(':id')
+  @Get('/:id')
   getOne(@Param('id') id: number) {
     return this.videoService.findOne(id);
   }
@@ -52,7 +50,7 @@ export class VideoController {
   }
 
   //actualizar por id
-  @Put(':id')
+  @Put('/:id')
   update(@Param('id') id: number, @Body() body: any) {
     return this.videoService.update(id, body);
   }

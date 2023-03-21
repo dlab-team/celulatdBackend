@@ -29,20 +29,21 @@ export class FavoriteService {
   }
 
   // borra por id (delete)
+
    async delete(id: number) {
-         await this.favoriteRepository.delete(id);
-         return true;
+      await this.favoriteRepository.delete(id);
+      return true;
    }
 
   //busca todo
-     findAll(){
-         this.favoriteRepository.find();
-     }
 
-    //busca de forma individual get por id 
-     findOne(id: number) {
-         return this.favoriteRepository.findOneBy({id:id});
-     }
-  
+  findAll(){
+    this.favoriteRepository.find();
+  }
 
+  //busca de forma individual get por id 
+
+  findOne(id: number) {
+    return this.favoriteRepository.findOneBy({id:id});
+  }
 }

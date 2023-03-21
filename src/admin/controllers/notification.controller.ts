@@ -9,16 +9,15 @@ import {
     Post,
     Put
   } from '@nestjs/common';
+
 import { NotificationDto } from 'src/dto/notification.dto';
 import { NotificationService } from '../services/notification.service';
-  
   
   @Controller('notification')
   export class NotificationController {
 
     constructor(private notificationService: NotificationService) {}
   
-    
     // post para crear notification por id
   
     @Post('/:id')
@@ -35,13 +34,13 @@ import { NotificationService } from '../services/notification.service';
     }
   
     //ver por id
-    @Get(':id')
+    @Get('/:id')
     getOne(@Param('id') id: number) {
       return this.notificationService.findOne(id);
     }
   
     //actualizar por id
-    @Put(':id')
+    @Put('/:id')
     update(@Param('id') id: number, @Body() body: any) {
       return this.notificationService.update(id, body);
     }
