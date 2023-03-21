@@ -1,4 +1,5 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Trash } from "./trash.entity";
 import { User } from "./user.entity";
 
 @Entity()
@@ -12,8 +13,13 @@ export class Notification {
   message: string;
   @Column()
   read: boolean;
-  @Column()
-  date_send: string;
+  @Column({ type: 'timestamptz' }) 
+  date_send: Date;
+
+   @OneToOne(() => Trash)
+   @JoinColumn({ name: 'trash_id' })
+   trash: Trash;
+
 
 
 }

@@ -15,6 +15,7 @@ export class Favorite {
 
   @Column()
   date_joined: string;
+  
 
   @ManyToOne(() => Video, video => video.favorite)
   video: Video;

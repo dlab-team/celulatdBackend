@@ -13,7 +13,7 @@ import { RegisterModule } from './registerUser/registerUser.module';
       port: 5432,
       username: 'jona',
       password: '1234',
-      database: 'testx',
+      database: 'test18',
       entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: true,
       retryDelay: 3000,

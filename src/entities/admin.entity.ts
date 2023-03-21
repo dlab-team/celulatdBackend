@@ -2,7 +2,7 @@ import { Entity, Column, PrimaryGeneratedColumn} from 'typeorm';
 
 
 @Entity()
-export class View {
+export class Admin {
   @PrimaryGeneratedColumn()
   id: number;
 

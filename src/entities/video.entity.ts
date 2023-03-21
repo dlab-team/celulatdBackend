@@ -35,6 +35,7 @@ export class Video {
   @OneToOne(() => View)
   @JoinColumn({ name: 'video_id' })
   view: View;
+  
 
   
 

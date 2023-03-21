@@ -12,7 +12,7 @@ export class CountClickService {
   [x: string]: any;
      constructor(
 
-    @InjectRepository(CountClickService)
+    @InjectRepository(Clickcount)
     private clickRepository: Repository<Clickcount>,
 
     @InjectRepository(Video)

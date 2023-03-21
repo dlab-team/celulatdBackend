@@ -12,6 +12,8 @@ export class View {
   @JoinColumn({ name: 'video_id' })
   video: Video;
 
-  @Column()
-  date_view: string;
+  
+  @Column({ type: 'timestamptz' }) 
+  date_view: Date;
+ 
 }

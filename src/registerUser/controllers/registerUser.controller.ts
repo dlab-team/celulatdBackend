@@ -1,10 +1,7 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import { UserDto } from 'src/dto/user.dto';
 import { RegisterService } from '../service/registerUser.service';
 
-
-//para el contador de click debemos usar put para actualizar una fila, lo mismo con delete y get:id
-//solo debmos mostrar una fila
-//get(all) no lo usaremos y post tampoco, pero debemos hacer que por defecto sea 0 al iniciar
 
 @Controller('register')
 export class RegisterController {
@@ -14,7 +11,7 @@ export class RegisterController {
   
     //ingresa usuario nuevo
     @Post()
-    create(@Body() body: any){
+    create(@Body() body: UserDto){
         return this.registerService.create(body);
     }
 
