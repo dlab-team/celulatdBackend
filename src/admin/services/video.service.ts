@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { VideoDto } from 'src/dto/video.dto';
-import { User } from 'src/entities/user.entity';
+import { Usr } from 'src/entities/user.entity';
 import { Video } from 'src/entities/video.entity';
 import { Repository } from 'typeorm';
 
@@ -9,8 +9,8 @@ import { Repository } from 'typeorm';
 export class VideoService {
   [x: string]: any;
      constructor(
-    @InjectRepository(User)
-    private userRepository: Repository<User>,
+    @InjectRepository(Usr)
+    private userRepository: Repository<Usr>,
     
     @InjectRepository(Video)
     private videoRepository: Repository<Video>,

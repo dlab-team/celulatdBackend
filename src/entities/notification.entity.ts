@@ -1,6 +1,6 @@
 import { Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Trash } from "./trash.entity";
-import { User } from "./user.entity";
+import { Usr } from "./user.entity";
 
 @Entity()
 export class Notification {
@@ -8,8 +8,8 @@ export class Notification {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne(() => User, user => user.notification)
-  user: User;
+  @ManyToOne(() => Usr, user => user.notification)
+  user: Usr;
 
   @Column()
   message: string;

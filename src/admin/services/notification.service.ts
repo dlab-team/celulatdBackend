@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { User } from 'src/entities/user.entity';
+import { Usr } from 'src/entities/user.entity';
 import { Repository } from 'typeorm';
 import { Notification } from 'src/entities/notification.entity';
 import { NotificationDto } from 'src/dto/notification.dto';
@@ -13,8 +13,8 @@ export class NotificationService {
     @InjectRepository(Notification)
     private notificationRepository: Repository<Notification>,
 
-    @InjectRepository(User)
-    private userRepository: Repository<User>,
+    @InjectRepository(Usr)
+    private userRepository: Repository<Usr>,
   ) { }
 
   async saveNotificationId(id: number, body: NotificationDto) {

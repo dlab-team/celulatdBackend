@@ -2,15 +2,15 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { FavoriteDto } from 'src/dto/favorite.dto';
 import { Favorite } from 'src/entities/favorite.entity';
-import { User } from 'src/entities/user.entity';
+import { Usr } from 'src/entities/user.entity';
 import { Repository } from 'typeorm';
 
 @Injectable()
 export class FavoriteService {
   [x: string]: any;
      constructor(
-    @InjectRepository(User)
-    private userRepository: Repository<User>,
+    @InjectRepository(Usr)
+    private userRepository: Repository<Usr>,
     
     @InjectRepository(Favorite)
     private favoriteRepository: Repository<Favorite>,

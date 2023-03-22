@@ -7,7 +7,7 @@ import {
  
   ManyToOne,
 } from 'typeorm';
-import { User } from './user.entity';
+import { Usr } from './user.entity';
 import { View } from './view.entity';
 
 
@@ -32,8 +32,8 @@ export class Video {
   @Column()
   route_archive: string;
 
-  @ManyToOne(() => User, user => user.video)
-  user: User;
+  @ManyToOne(() => Usr, user => user.video)
+  user: Usr;
 
   @OneToOne(() => View)
   @JoinColumn({ name: 'video_id' })

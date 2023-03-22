@@ -4,7 +4,8 @@ import {
     Delete,
     Get,
     Param,
-    Put
+    Put,
+    Post
   } from '@nestjs/common';
   
 import { UserDto } from 'src/dto/user.dto';

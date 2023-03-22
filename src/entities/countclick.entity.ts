@@ -1,5 +1,5 @@
 import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
-import { User } from "./user.entity";
+import { Usr } from "./user.entity";
 
 
 @Entity()
@@ -9,9 +9,9 @@ export class Clickcount {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @OneToOne(() => User)
+  @OneToOne(() => Usr)
   @JoinColumn({ name: 'user_id' })
-  user: User;
+  user: Usr;
   
   @Column()
   number_click: number;

@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { UserDto } from 'src/dto/user.dto';
 
-import { User } from 'src/entities/user.entity';
+import { Usr } from 'src/entities/user.entity';
 import { Repository } from 'typeorm';
 
 
@@ -10,8 +10,8 @@ import { Repository } from 'typeorm';
 @Injectable()
 export class RegisterService {
     constructor(
-        @InjectRepository(User) 
-        private RegisterRepo: Repository<User> 
+        @InjectRepository(Usr) 
+        private RegisterRepo: Repository<Usr> 
     ) {}
     
     //find all get 
@@ -19,7 +19,7 @@ export class RegisterService {
         this.RegisterRepo.find();
     }
     // get for id 
-    findOne(id: number): Promise<User> {
+    findOne(id: number): Promise<Usr> {
         return this.RegisterRepo.findOneBy({id:id});
     }
     //create post

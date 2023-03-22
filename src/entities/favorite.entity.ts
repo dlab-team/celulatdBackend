@@ -1,5 +1,5 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { User } from "./user.entity";
+import { Usr } from "./user.entity";
 import { Video } from "./video.entity";
 
 
@@ -10,8 +10,8 @@ export class Favorite {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne(() => User, user => user.favorite)
-  user: User;
+  @ManyToOne(() => Usr, user => user.favorite)
+  user: Usr;
 
   @Column({ type: 'timestamptz' }) 
   date_joined: Date;

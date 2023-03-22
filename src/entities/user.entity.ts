@@ -11,7 +11,7 @@ import { Video } from './video.entity';
 import { Clickcount } from "./countclick.entity";
   
   @Entity()
-  export class User {
+  export class Usr {
     [x: string]: any;
     @PrimaryGeneratedColumn()
     id: number;

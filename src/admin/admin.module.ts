@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Clickcount } from 'src/entities/countclick.entity';
 import { Favorite } from 'src/entities/favorite.entity';
-import { User } from 'src/entities/user.entity';
+import { Usr } from 'src/entities/user.entity';
 import { Video } from 'src/entities/video.entity';
 import { View } from 'src/entities/view.entity';
 import { Notification } from 'src/entities/notification.entity';
@@ -22,7 +22,7 @@ import { Trash } from 'src/entities/trash.entity';
 import { ViewController } from './controllers/view.controllers';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Admin, Video, User, View, Clickcount, Favorite, Notification, Trash])],
+  imports: [TypeOrmModule.forFeature([Admin, Video, Usr, View, Clickcount, Favorite, Notification, Trash])],
   providers: [VideoService, UserService, ViewService, CountClickService, FavoriteService, NotificationService],
   controllers: [VideoController, UserController, CountClickController, FavoriteController, NotificationController, ViewController],
 })
