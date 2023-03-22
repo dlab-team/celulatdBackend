@@ -44,8 +44,9 @@ export class VideoService {
 
   //busca todo
 
-  findAll(){
-    this.videoRepository.find();
+  
+  async findAll(): Promise<Video[]> {
+     return this.videoRepository.find();
   }
 
   //busca de forma individual get por id 

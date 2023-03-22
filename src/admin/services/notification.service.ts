@@ -40,6 +40,11 @@ export class NotificationService {
   findOne(id: number) {
     return this.notificationRepository.findOneBy({id:id});
   }
+
+  //busca todo
+  async findAll(): Promise<Notification[]> {
+    return this.notificationRepository.find();
+  }
      
   // actualiza por id(put)
 

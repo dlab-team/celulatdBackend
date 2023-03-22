@@ -49,5 +49,12 @@ export class ViewService {
   findOne(id: number) {
     return this.viewRepository.findOneBy({id:id});
   }
+
+  //busca todo
+
+  async findAll(): Promise<View[]> {
+    return this.viewRepository.find();
+  }
+
   
 }

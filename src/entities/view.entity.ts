@@ -11,7 +11,6 @@ export class View {
   @OneToOne(() => Video)
   @JoinColumn({ name: 'video_id' })
   video: Video;
-
   
   @Column({ type: 'timestamptz' }) 
   date_view: Date;

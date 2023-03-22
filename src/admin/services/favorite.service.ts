@@ -37,8 +37,8 @@ export class FavoriteService {
 
   //busca todo
 
-  findAll(){
-    this.favoriteRepository.find();
+  async findAll(): Promise<Favorite[]> {
+    return this.favoriteRepository.find();
   }
 
   //busca de forma individual get por id 

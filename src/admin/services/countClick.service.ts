@@ -49,6 +49,11 @@ export class CountClickService {
   findOne(id: number) {
    return this.clickRepository.findOneBy({id:id});
   }
+
+  //biusca todo
+  async findAll(): Promise<Clickcount[]> {
+    return this.clickRepository.find();
+  }
      
   // actualiza por id(put)
 

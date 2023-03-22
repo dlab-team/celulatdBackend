@@ -13,9 +13,9 @@ export class UserService {
     
     //busca todo
 
-    findAll() {
-        this.userRepository.find();
-    }
+    async findAll(): Promise<User[]> {
+        return this.userRepository.find();
+      }
 
     //busca de forma individual get por id 
 
