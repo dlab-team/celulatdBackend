@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AdminModule } from './admin/admin.module';
+import { AdminloginModule } from './adminlogin/adminlogin.module';
 import { RegisterModule } from './registerUser/registerUser.module';
-
 
 
 @Module({
@@ -20,7 +20,8 @@ import { RegisterModule } from './registerUser/registerUser.module';
       retryAttempts: 10,
     }),
     AdminModule,
-    RegisterModule
+    RegisterModule,
+    AdminloginModule
   ],
   controllers: [],
   providers: [],
