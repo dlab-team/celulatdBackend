@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { AdminLoginService } from './adminlogin.service';
 
 
-describe('AdminloginService', () => {
+describe('AdminLoginService', () => {
   let service: AdminLoginService;
 
   beforeEach(async () => {

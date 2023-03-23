@@ -13,17 +13,16 @@ export class AdminLoginService {
     ) {}
     
     //find all get 
-
-    findAll(){
-        this.adminLoginRepository.find();
-    }
+    async findAll(): Promise<Admin[]> {
+        return this.adminLoginRepository.find();
+      }
 
     // get for id 
 
     findOne(id: number): Promise<Admin> {
         return this.adminLoginRepository.findOneBy({id:id});
     }
-    
+
     //create post
 
     create(body: AdminDto) {

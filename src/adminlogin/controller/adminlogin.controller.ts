@@ -10,7 +10,6 @@ import {
 import { AdminDto } from 'src/dto/admin.dto';
 import { AdminLoginService } from '../service/adminlogin.service';
 
-  
 
   
   @Controller('adminlogin')
@@ -36,14 +35,14 @@ import { AdminLoginService } from '../service/adminlogin.service';
      return this.adminLoginService.findAll();
     }
 
-    //eliminar usuario
+    //eliminar admin
 
     @Delete('delete/:id')
     delete(@Param('id') id: number) {
       return this.adminLoginService.delete(id);
     }
 
-      //ingresa usuario nuevo
+      //ingresa nuevo admin
 
       @Post()
       create(@Body() body: AdminDto){
