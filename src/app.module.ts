@@ -2,7 +2,8 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AdminModule } from './admin/admin.module';
 import { AdminloginModule } from './adminlogin/adminlogin.module';
-import { RegisterModule } from './registerUser/registerUser.module';
+import { RegisterAdminModule } from './registerAdmin/registerAdmin.module';
+import { RegisterUserModule } from './registerUser/registerUser.module';
 
 
 @Module({
@@ -13,15 +14,18 @@ import { RegisterModule } from './registerUser/registerUser.module';
       port: 5432,
       username: 'jona',
       password: '1234',
-      database: 'celtd1',
+      database: 'ctd1',
       entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: true,
       retryDelay: 3000,
       retryAttempts: 10,
     }),
     AdminModule,
-    RegisterModule,
-    AdminloginModule
+    RegisterUserModule,
+    AdminloginModule,
+    RegisterAdminModule
+
+
   ],
   controllers: [],
   providers: [],

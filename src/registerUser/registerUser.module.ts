@@ -12,4 +12,4 @@ import { RegisterService } from './service/registerUser.service';
   providers: [RegisterService],
   controllers: [RegisterController]
 })
-export class RegisterModule {}
+export class RegisterUserModule {}

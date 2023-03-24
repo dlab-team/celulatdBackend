@@ -1,6 +1,8 @@
 export class AdminDto {
   
-    name: string;
-    password: string;
+  name: string;
+  mail: string;
+  password: string;
+  foto: string;
    
   }

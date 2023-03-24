@@ -20,10 +20,12 @@ import { NotificationController } from './controllers/notification.controller';
 import { Admin } from 'src/entities/admin.entity';
 import { Trash } from 'src/entities/trash.entity';
 import { ViewController } from './controllers/view.controllers';
+import { AdminService } from './services/admin.service';
+import { AdminController } from './controllers/admin.controller';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Admin, Video, Usr, View, Clickcount, Favorite, Notification, Trash])],
-  providers: [VideoService, UserService, ViewService, CountClickService, FavoriteService, NotificationService],
-  controllers: [VideoController, UserController, CountClickController, FavoriteController, NotificationController, ViewController],
+  providers: [AdminService,VideoService, UserService, ViewService, CountClickService, FavoriteService, NotificationService],
+  controllers: [AdminController, VideoController, UserController, CountClickController, FavoriteController, NotificationController, ViewController],
 })
 export class AdminModule {}
