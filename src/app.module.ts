@@ -1,9 +1,14 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AdminModule } from './admin/admin.module';
-import { AdminloginModule } from './adminlogin/adminlogin.module';
-import { RegisterAdminModule } from './registerAdmin/registerAdmin.module';
-import { RegisterUserModule } from './registerUser/registerUser.module';
+import { CountClickModule } from './count-click/count-click.module';
+import { FavoriteModule } from './favorite/favorite.module';
+import { NotificationModule } from './notification/notification.module';
+import { UserModule } from './user/user.module';
+import { VideoModule } from './video/video.module';
+import { ViewModule } from './view/view.module';
+import { TrashModule } from './trash/trash.module';
+
 
 
 @Module({
@@ -21,9 +26,13 @@ import { RegisterUserModule } from './registerUser/registerUser.module';
       retryAttempts: 10,
     }),
     AdminModule,
-    RegisterUserModule,
-    AdminloginModule,
-    RegisterAdminModule
+    VideoModule,
+    CountClickModule,
+    ViewModule,
+    UserModule,
+    NotificationModule,
+    FavoriteModule,
+    TrashModule
 
 
   ],
