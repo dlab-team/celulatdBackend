@@ -19,12 +19,12 @@ import { FavoriteService } from '../services/favorite.service';
   
     // post para crear favorito por id
   
-    @Post('/:id')
-    @HttpCode(HttpStatus.NO_CONTENT)
-    createClickId(@Param('id') id: number, @Body() favoriteDto: FavoriteDto) {
-      console.log(favoriteDto);
-      this.favoriteService.saveFavoriteId(id, favoriteDto);
-    }
+    //  @Post('/:id')
+    //  @HttpCode(HttpStatus.NO_CONTENT)
+    //  createFavoriteId(@Param('id') id: number, @Body() favoriteDto: FavoriteDto) {
+    //    console.log(favoriteDto);
+    //    this.favoriteService.saveFavoriteId(id, favoriteDto);
+    //  }
 
     //eliminar 
   

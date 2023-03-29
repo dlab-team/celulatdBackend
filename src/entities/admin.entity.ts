@@ -10,11 +10,11 @@ export class Admin {
   name: string;
 
   @Column()
-  mail: string;
+  email: string;
 
   @Column()
   password: string;
   
   @Column()
-  foto: string;
+  photo: string;
 }

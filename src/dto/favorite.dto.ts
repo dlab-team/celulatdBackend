@@ -1,4 +1,6 @@
 
 export class FavoriteDto {
-    date_joined: string;
+    user_id: number;
+    video_id: number;
+    
   }

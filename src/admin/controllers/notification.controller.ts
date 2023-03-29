@@ -20,12 +20,13 @@ import { NotificationService } from '../services/notification.service';
   
     // post para crear notification por id
   
-    @Post('/:id')
-    @HttpCode(HttpStatus.NO_CONTENT)
-    createNotificationId(@Param('id') id: number, @Body() notificationDto: NotificationDto) {
-      console.log(notificationDto);
-      this.notificationService.saveNotificationId(id, notificationDto);
-    }
+    // @Post('/:id')
+    // @HttpCode(HttpStatus.NO_CONTENT)
+    // createNotificationId(@Param('id') id: number, @Body() notificationDto: NotificationDto) {
+    //   console.log(notificationDto);
+    //   this.notificationService.saveNotificationId(id, notificationDto);
+    // }
+    
     //eliminar Notification
   
     @Delete('delete/:id')

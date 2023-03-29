@@ -9,12 +9,11 @@ export class Clickcount {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @OneToOne(() => Usr)
-  @JoinColumn({ name: 'user_id' })
-  user: Usr;
+  @Column()
+  number_click: number;  
   
   @Column()
-  number_click: number;
+  id_user: number;
 
 
 }

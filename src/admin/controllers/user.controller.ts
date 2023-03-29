@@ -5,7 +5,6 @@ import {
     Get,
     Param,
     Put,
-    Post
   } from '@nestjs/common';
   
 import { UserDto } from 'src/dto/user.dto';

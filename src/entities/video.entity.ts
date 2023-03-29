@@ -1,14 +1,9 @@
 import {
   Entity,
   Column,
-  PrimaryGeneratedColumn,
-  JoinColumn,
-  OneToOne,
- 
-  ManyToOne,
+  PrimaryGeneratedColumn
 } from 'typeorm';
-import { Usr } from './user.entity';
-import { View } from './view.entity';
+
 
 
 
@@ -32,16 +27,9 @@ export class Video {
   @Column()
   route_archive: string;
 
-  @ManyToOne(() => Usr, user => user.video)
-  user: Usr;
-
-  @OneToOne(() => View)
-  @JoinColumn({ name: 'video_id' })
-  view: View;
+  @Column()
+  user_id: number;
   
-
-  
-
 }
 
  

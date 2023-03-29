@@ -1,7 +1,8 @@
 export class UserDto {
   
     name: string;
-    mail: string;
+    email: string;
+    phone: string;
     password: string;
-    foto: string;
+    photo: string;
 }

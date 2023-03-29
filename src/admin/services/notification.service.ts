@@ -17,16 +17,16 @@ export class NotificationService {
     private userRepository: Repository<Usr>,
   ) { }
 
-  async saveNotificationId(id: number, body: NotificationDto) {
-    const user = await this.userRepository.findOneBy({id:id});
-    if (user ) {
-      const notification = this.notificationRepository.create(body);
-      notification.user = user;
-      await this.notificationRepository.save(notification);
-      return notification
-    }
-    throw new NotFoundException(`No encontramos el el click asociado ${id}`)
-  }
+  // async saveNotificationId(id: number, body: NotificationDto) {
+  //   const user = await this.userRepository.findOneBy({id:id});
+  //   if (user ) {
+  //     const notification = this.notificationRepository.create(body);
+  //     notification.user = user;
+  //     await this.notificationRepository.save(notification);
+  //     return notification
+  //   }
+  //   throw new NotFoundException(`No encontramos el el click asociado ${id}`)
+  // }
 
   // borra por id (delete)
 

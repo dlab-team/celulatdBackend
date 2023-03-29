@@ -4,4 +4,5 @@ export class VideoDto {
     description: string;
     duration: number;
     route_archive: string;
+    user_id: number;
   }

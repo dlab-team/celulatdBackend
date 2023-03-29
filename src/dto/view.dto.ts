@@ -1,4 +1,4 @@
 export class ViewDto{
-    
-    date_view: string;
+    user_id: number;
+    video_id: number;
 }

@@ -1,6 +1,5 @@
 
-import { Entity, Column, PrimaryGeneratedColumn, OneToOne, JoinColumn, ManyToOne } from 'typeorm';
-import { Video } from './video.entity';
+import { Entity, Column, PrimaryGeneratedColumn} from 'typeorm';
 
 
 @Entity()
@@ -8,11 +7,10 @@ export class View {
   @PrimaryGeneratedColumn()
   id: number;
   
-  @OneToOne(() => Video)
-  @JoinColumn({ name: 'video_id' })
-  video: Video;
-  
-  @Column({ type: 'timestamptz' }) 
-  date_view: Date;
+  @Column() 
+  user_id: number;
+
+  @Column() 
+  video_id: number;
  
 }

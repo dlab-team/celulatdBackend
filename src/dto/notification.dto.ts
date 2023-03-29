@@ -1,6 +1,8 @@
 
 export class NotificationDto {
+
+    user_id: number;
     message: string;
     read: boolean;
-    date_send: string;
+    
   }
