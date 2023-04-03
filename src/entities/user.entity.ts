@@ -45,14 +45,14 @@ import { View } from './view.entity';
     @OneToMany(() => Clickcount, (clickcount) => clickcount.user)
     clickcount: Clickcount[];
 
-    @OneToMany(() => Trash, (trash) => trash.user)
-    trash: Trash[];
+    // @OneToMany(() => Trash, (trash) => trash.user)
+    // trash: Trash[];
 
-    @OneToMany(() => Favorite, (favorite) => favorite.user)
-    favorite: Favorite[];
+    // @OneToMany(() => Favorite, (favorite) => favorite.user)
+    // favorite: Favorite[];
 
-    @OneToMany(() => View, (view) => view.user)
-    view: View[];
+    // @OneToMany(() => View, (view) => view.user)
+    // view: View[];
 
  
   }

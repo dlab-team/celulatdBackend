@@ -11,8 +11,8 @@ export class View {
   id: number;
   
 
-  @ManyToOne(() => Usr, user => user.view)
-  user: Usr;
+  // @ManyToOne(() => Usr, user => user.view)
+  // user: Usr;
 
   @ManyToOne(() => Video, video => video.view)
   video: Video;

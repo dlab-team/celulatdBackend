@@ -9,8 +9,8 @@ export class Trash {
   @PrimaryGeneratedColumn()
   id: number
   
-  @ManyToOne(() => Usr, user => user.trash)
-  user: Usr;
+  // @ManyToOne(() => Usr, user => user.trash)
+  // user: Usr;
 
   @OneToOne(() => Notification)
   @JoinColumn({ name: 'notification' })

@@ -19,7 +19,7 @@ import { TrashModule } from './trash/trash.module';
       port: 5432,
       username: 'jona',
       password: '1234',
-      database: 'rama3',
+      database: 'testx',
       entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: true,
       retryDelay: 3000,

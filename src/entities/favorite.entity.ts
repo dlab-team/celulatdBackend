@@ -10,8 +10,8 @@ export class Favorite {
   id: number;
 
 
-  @ManyToOne(() => Usr, user => user.favorite)
-  favorite: Usr;
+  // @ManyToOne(() => Usr, user => user.favorite)
+  // favorite: Usr;
 
   @ManyToOne(() => Video, video => video.favorite)
   video: Video;
