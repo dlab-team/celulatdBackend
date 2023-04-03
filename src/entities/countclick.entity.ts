@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Usr } from "./user.entity";
 
 
@@ -9,11 +9,11 @@ export class Clickcount {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column('int')
   number_click: number;  
   
-  @Column()
-  id_user: number;
+  @ManyToOne(() => Usr, user => user.id)
+  user: Usr;
 
 
 }

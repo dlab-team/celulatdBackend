@@ -19,9 +19,9 @@ import { TrashModule } from './trash/trash.module';
       port: 5432,
       username: 'jona',
       password: '1234',
-      database: 'ctd2',
+      database: 'rama3',
       entities: ['dist/**/*.entity{.ts,.js}'],
-      synchronize: false,
+      synchronize: true,
       retryDelay: 3000,
       retryAttempts: 10,
     }),
@@ -32,9 +32,7 @@ import { TrashModule } from './trash/trash.module';
     UserModule,
     NotificationModule,
     FavoriteModule,
-    TrashModule
-
-
+    //TrashModule
   ],
   controllers: [],
   providers: [],

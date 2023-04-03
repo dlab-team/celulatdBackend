@@ -16,17 +16,18 @@ export class FavoriteService {
     private favoriteRepository: Repository<Favorite>,
   ) { }
 
-  //  async saveFavoriteId(id: number, body: FavoriteDto) {
-  //    const user = await this.userRepository.findOneBy({id:id});
-  //    console.log(user, id);
-  //    if (user) {
-  //      const favorite = this.favoriteRepository.create(body);
-  //      favorite.user = user;
-  //      await this.favoriteRepository.save(favorite);
-  //      return favorite
-  //    }
-  //    throw new NotFoundException(`No encontramos el usuario ${id}`)
-  //  }
+  
+//    async saveFavoriteId(id: number, body: FavoriteDto) {
+//      const user = await this.userRepository.findOneBy({id:id});
+//      console.log(user, id);
+//      if (user) {
+//        const favorite = this.favoriteRepository.create(body);
+//        favorite.user = user;
+//        await this.favoriteRepository.save(favorite);
+//        return favorite
+//      }
+//      throw new NotFoundException(`No encontramos el usuario ${id}`)
+//    }
 
   // borra por id (delete)
 

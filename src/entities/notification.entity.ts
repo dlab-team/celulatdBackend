@@ -1,18 +1,28 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Trash } from "./trash.entity";
+import { Usr } from "./user.entity";
+import { View } from "./view.entity";
 
 @Entity()
 export class Notification {
+  [x: string]: any;
 
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
-  user_id: number;
-
-  @Column()
+  @Column('text')
   message: string;
 
   @Column()
   read: boolean;
+  
+  @ManyToOne(() => Usr, user => user.notification)
+  user: Usr;
 
+  @OneToOne(() => Trash)
+  @JoinColumn({ name: 'trash' })
+  trash: Trash;
+
+  @Column({ type: 'timestamptz', nullable: true })
+  date_send: Date;
 }

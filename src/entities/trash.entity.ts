@@ -1,15 +1,19 @@
-import { Entity, Column, PrimaryGeneratedColumn, JoinColumn, OneToOne } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, JoinColumn, OneToOne, ManyToOne } from 'typeorm';
+import { Usr } from './user.entity';
+import { Notification } from './notification.entity';
 
 
 @Entity()
 export class Trash {
+  [x: string]: any;
   @PrimaryGeneratedColumn()
-  id: number;
+  id: number
+  
+  @ManyToOne(() => Usr, user => user.trash)
+  user: Usr;
 
-  @Column()
-  user_id: number;
-
-  @Column()
-  notification_id: number;
+  @OneToOne(() => Notification)
+  @JoinColumn({ name: 'notification' })
+  notification: Notification;
 
 }

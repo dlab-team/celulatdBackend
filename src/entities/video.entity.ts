@@ -1,8 +1,13 @@
 import {
   Entity,
   Column,
-  PrimaryGeneratedColumn
+  PrimaryGeneratedColumn,
+  ManyToOne,
+  OneToMany
 } from 'typeorm';
+import { Favorite } from './favorite.entity';
+import { Usr } from './user.entity';
+import { View } from './view.entity';
 
 
 
@@ -15,20 +20,29 @@ export class Video {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column('varchar', { length: 50 })
   title: string;
 
-  @Column()
+  @Column('text')
   description: string;
 
-  @Column()
+  @Column('float')
   duration: number;
   
-  @Column()
+  @Column('varchar', { length: 200 })
   route_archive: string;
 
-  @Column()
-  user_id: number;
+  @Column({ type: 'timestamptz', nullable: true })
+  date_publication: Date;
+
+  @ManyToOne(() => Usr, user => user.video)
+  user: Usr;
+
+  @OneToMany(() => View, (view) => view.video)
+  view: View[];
+
+  @OneToMany(() => Favorite, (favorite) => favorite.video)
+  favorite: Favorite[];
   
 }
 
