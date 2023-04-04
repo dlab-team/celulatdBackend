@@ -1,66 +1,17 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { VideoDto } from 'src/dto/video.dto';
-import { Usr } from 'src/entities/user.entity';
-import { Video } from 'src/entities/video.entity';
-import { Repository } from 'typeorm';
+import { Injectable } from "@nestjs/common";
+import { InjectRepository } from "@nestjs/typeorm";
+import { BaseService } from "src/commons/service.commons";
+import { Video } from "src/entities/video.entity";
+import { Repository } from "typeorm";
 
 @Injectable()
-export class VideoService {
-  [x: string]: any;
-     constructor(
-    @InjectRepository(Usr)
-    private userRepository: Repository<Usr>,
-    
-    @InjectRepository(Video)
-    private videoRepository: Repository<Video>,
-  ) { }
+export class VideoService extends BaseService<Video> {
 
-  async saveVideoId(id: number, body: VideoDto) {
-    const user = await this.userRepository.findOneBy({id:id});
-    console.log(user, id);
-    if (user) {
-      const video = this.videoRepository.create(body);
-      video.user = user;
-      await this.videoRepository.save(video);
-      return video
+    constructor(@InjectRepository(Video) private videoRepository : Repository<Video>) {
+        super();
     }
-    throw new NotFoundException(`No encontramos el usuario ${id}`)
-  }
 
-  //crea el post
-
-  create(body: VideoDto) {
-    const newVideo = this.videoRepository.create(body);
-    return this.videoRepository.save(newVideo);
-  }
-       
-  // borra por id (delete)
-
-  async delete(id: number) {
-    await this.videoRepository.delete(id);
-    return true;
-  }
-
-  //busca todo
-
-  
-  async findAll(): Promise<Video[]> {
-     return this.videoRepository.find();
-  }
-
-  //busca de forma individual get por id 
-
-  findOne(id: number) {
-    return this.videoRepository.findOneBy({id:id});
-  }
-     
-  // actualiza por id(put)
-
-  async update(id: number, body: VideoDto){
-    const video = await this.videoRepository.findOneBy({id:id});
-    this.videoRepository.merge(video, body);
-    return this.videoRepository.save(video)
-  }
-
+    getRepository(): Repository<Video> {
+        return this.videoRepository;
+    }
 }

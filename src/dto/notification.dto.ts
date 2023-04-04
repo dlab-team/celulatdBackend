@@ -1,7 +1,7 @@
 
 export class NotificationDto {
 
-    user_id: number;
+    id: number;
     message: string;
     read: boolean;
     

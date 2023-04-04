@@ -1,5 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn, JoinColumn, OneToOne, ManyToOne } from 'typeorm';
-import { Usr } from './user.entity';
+import { Entity,PrimaryGeneratedColumn, JoinColumn, OneToOne, ManyToOne } from 'typeorm';
+// import { Usr } from './user.entity';
 import { Notification } from './notification.entity';
 
 
@@ -13,7 +13,7 @@ export class Trash {
   // user: Usr;
 
   @OneToOne(() => Notification)
-  @JoinColumn({ name: 'notification' })
+  @JoinColumn({ name: 'message' })
   notification: Notification;
 
 }

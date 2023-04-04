@@ -32,7 +32,7 @@ import { TrashModule } from './trash/trash.module';
     UserModule,
     NotificationModule,
     FavoriteModule,
-    //TrashModule
+    TrashModule
   ],
   controllers: [],
   providers: [],

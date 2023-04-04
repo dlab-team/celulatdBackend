@@ -1,50 +1,18 @@
-import {
-    Body,
-    Controller,
-    Delete,
-    Get,
-    HttpCode,
-    HttpStatus,
-    Param,
-    Post,
-    Put
-  } from '@nestjs/common';
-
-import { NotificationDto } from 'src/dto/notification.dto';
-import { NotificationService } from '../service/notification.service';
+import { Controller } from "@nestjs/common";
+import { BaseController } from "src/commons/controller.commons";
+import { NotificationService } from "../service/notification.service";
+import { BaseService } from "src/commons/service.commons";
 
   
-  @Controller('notification')
-  export class NotificationController {
+@Controller('notification')
+export class NotificationController extends BaseController<Notification> {
 
-    constructor(private notificationService: NotificationService) {}
-  
-    // post para crear notification por id
-  
-    // @Post('/:id')
-    // @HttpCode(HttpStatus.NO_CONTENT)
-    // createNotificationId(@Param('id') id: number, @Body() notificationDto: NotificationDto) {
-    //   console.log(notificationDto);
-    //   this.notificationService.saveNotificationId(id, notificationDto);
-    // }
-    
-    //eliminar Notification
-  
-    @Delete('delete/:id')
-    delete(@Param('id') id: number) {
-      return this.notificationService.delete(id);
+    constructor(private readonly notificationService: NotificationService) {
+        super();
     }
-  
-    //ver por id
-    @Get('/:id')
-    getOne(@Param('id') id: number) {
-      return this.notificationService.findOne(id);
+
+    getService(): BaseService<Notification> {
+        return this.notificationService;
     }
-  
-    //actualizar por id
-    @Put('/:id')
-    update(@Param('id') id: number, @Body() body: NotificationDto) {
-      return this.notificationService.update(id, body);
-    }
-  }
-  
+
+}

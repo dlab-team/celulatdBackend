@@ -1,47 +1,20 @@
-import {
-    Body,
-    Controller,
-    Delete,
-    Get,
-    HttpCode,
-    HttpStatus,
-    Param,
-    Post,
-    Put
-  } from '@nestjs/common';
-import { ClickDto } from 'src/dto/click.dto';
-import { CountClickService } from '../service/countClick.service';
+import { Controller } from "@nestjs/common";
+import { BaseController } from "src/commons/controller.commons";
+import { BaseService } from "src/commons/service.commons";
+import { Clickcount } from "src/entities/countclick.entity";
+import { CountClickService } from "../service/countClick.service";
 
   
-  @Controller('countclick')
-  export class CountClickController {
-    constructor(private clickService: CountClickService) {}
+@Controller('clickcount')
+export class ClickCountController extends BaseController<Clickcount> {
 
-    // post para crear Video por id
-  
-    @Post('/:id')
-    @HttpCode(HttpStatus.NO_CONTENT)
-    createClickId(@Param('id') id: number, @Body() clickDto: ClickDto) {
-      console.log(clickDto);
-      this.clickService.saveClickId(id, clickDto);
+    constructor(private readonly clickCountService: CountClickService) {
+        super();
     }
-    //eliminar video
-  
-    @Delete('delete/:id')
-    delete(@Param('id') id: number) {
-      return this.clickService.delete(id);
+
+    getService(): BaseService<Clickcount> {
+        return this.clickCountService;
     }
-  
-    //ver por id
-    @Get('/:id')
-    getOne(@Param('id') id: number) {
-      return this.clickService.findOne(id);
-    }
-  
-    //actualizar por id
-    @Put('/:id')
-    update(@Param('id') id: number, @Body() body: any) {
-      return this.clickService.update(id, body);
-    }
-  }
+
+}
   

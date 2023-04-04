@@ -1,59 +1,21 @@
-import {
-    Body,
-    Controller,
-    Delete,
-    Get,
-    HttpCode,
-    HttpStatus,
-    Param,
-    Post,
-    Put
-  } from '@nestjs/common';
-  import { VideoDto } from 'src/dto/video.dto';
+import { Controller } from '@nestjs/common';
 import { VideoService } from '../service/video.service';
+import { BaseController } from 'src/commons/controller.commons';
+import { Video } from 'src/entities/video.entity';
+import { BaseService } from 'src/commons/service.commons';
  
   
-  @Controller('video')
-  export class VideoController {
-    constructor(private videoService: VideoService) {}
   
-    // post para crear Video
-  
-    @Post()
-    create(@Body() body: any) {
-      return this.videoService.create(body);
+@Controller('video')
+export class VideoController extends BaseController<Video> {
+
+    constructor(private readonly videoService: VideoService) {
+        super();
     }
-    
-    // post para crear Video por id
-  
-    @Post('/:id')
-    @HttpCode(HttpStatus.NO_CONTENT)
-    createVideoId(@Param('id') id: number, @Body() videoDto: VideoDto) {
-      console.log(videoDto);
-      this.videoService.saveVideoId(id, videoDto);
+
+    getService(): BaseService<Video> {
+        return this.videoService;
     }
-    //eliminar video
-  
-    @Delete('delete/:id')
-    delete(@Param('id') id: number) {
-      return this.videoService.delete(id);
-    }
-  
-    //ver por id
-    @Get('/:id')
-    getOne(@Param('id') id: number) {
-      return this.videoService.findOne(id);
-    }
-    //ver todo
-    @Get()
-    getAll() {
-      return this.videoService.findAll();
-    }
-  
-    //actualizar por id
-    @Put('/:id')
-    update(@Param('id') id: number, @Body() body: any) {
-      return this.videoService.update(id, body);
-    }
-  }
+
+}
   
