@@ -19,7 +19,7 @@ import { TrashModule } from './trash/trash.module';
       port: 5432,
       username: 'postgres',
       password: 'admin',
-      database: 'ctd1',
+      database: 'ctd',
       entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: true,
       retryDelay: 3000,

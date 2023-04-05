@@ -6,7 +6,7 @@ import { Controller } from "@nestjs/common";
 
   
 @Controller('trash')
-export class NotificationController extends BaseController<Trash> {
+export class TrashController extends BaseController<Trash> {
 
     constructor(private readonly notificationService: TrashService) {
         super();

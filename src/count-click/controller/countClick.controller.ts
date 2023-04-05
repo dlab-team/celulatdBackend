@@ -6,7 +6,7 @@ import { CountClickService } from "../service/countClick.service";
 
   
 @Controller('clickcount')
-export class ClickCountController extends BaseController<Clickcount> {
+export class CountClickController extends BaseController<Clickcount> {
 
     constructor(private readonly clickCountService: CountClickService) {
         super();
