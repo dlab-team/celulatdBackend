@@ -5,7 +5,7 @@ import { Controller } from "@nestjs/common";
 import { BaseService } from "src/commons/service.commons";
 
 @Controller('view')
-export class FavoriteController extends BaseController<View> {
+export class ViewController extends BaseController<View> {
 
     constructor(private readonly viewService: ViewService) {
         super();
