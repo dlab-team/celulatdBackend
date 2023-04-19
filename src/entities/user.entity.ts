@@ -14,7 +14,7 @@ import { View } from './view.entity';
 
   
   @Entity()
-  export class Usr {
+  export class Admin {
     [x: string]: any;
 
 
@@ -36,24 +36,7 @@ import { View } from './view.entity';
     @Column('varchar', { length: 500 })
     photo: string;
 
-    @OneToMany(() => Video, (video) => video.user)
-    video: Video[];
-
-    @OneToMany(() => Notification, (notification) => notification.user)
-    notification: Notification[];
-    
-    @OneToMany(() => Clickcount, (clickcount) => clickcount.user)
-    clickcount: Clickcount[];
-
-    // @OneToMany(() => Trash, (trash) => trash.user)
-    // trash: Trash[];
-
-    // @OneToMany(() => Favorite, (favorite) => favorite.user)
-    // favorite: Favorite[];
-
-    // @OneToMany(() => View, (view) => view.user)
-    // view: View[];
-
+   
  
   }
   

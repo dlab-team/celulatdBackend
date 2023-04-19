@@ -1,6 +1,6 @@
 import { Column, Entity, JoinColumn, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Trash } from "./trash.entity";
-import { Usr } from "./user.entity";
+import { User } from "src/auth/entities/user.entity";
 
 
 @Entity()
@@ -16,8 +16,8 @@ export class Notification {
   @Column()
   read: boolean;
   
-  @ManyToOne(() => Usr, user => user.notification)
-  user: Usr;
+  @ManyToOne(() => User, user => user.notification)
+  user: User;
 
   @OneToOne(() => Trash)
   @JoinColumn({ name: 'trash' })
