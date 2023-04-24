@@ -34,7 +34,7 @@ export class AuthService {
 
       return {
         ...user,
-        token: this.getJwtToken({ email: user.email })
+        token: this.getJwtToken({ id: user.id})
       };
       // TODO: Retornar el JWT de acceso
 
@@ -44,34 +44,42 @@ export class AuthService {
 
   }
   
-    async login( loginUserDto: LoginUserDto ) {
+  async login( loginUserDto: LoginUserDto ) {
 
-      const { password, email } = loginUserDto;
-  
-      const user = await this.userRepository.findOne({
-        where: { email },
-        select: { email: true, password: true } //! OJO!
-      });
-  
-      if ( !user ) 
-        throw new UnauthorizedException('Credentials are not valid (email)');
-        
-      if ( !bcrypt.compareSync( password, user.password ) )
-        throw new UnauthorizedException('Credentials are not valid (password)');
-  
+    const { password, email } = loginUserDto;
+
+    const user = await this.userRepository.findOne({
+      where: { email },
+      select: { email: true, password: true, id:true } //! OJO!
+    });
+
+    if ( !user ) 
+      throw new UnauthorizedException('Credentials are not valid (email)');
+      
+    if ( !bcrypt.compareSync( password, user.password ) )
+      throw new UnauthorizedException('Credentials are not valid (password)');
+
       return {
         ...user,
-        token: this.getJwtToken({ email: user.email})
+        token: this.getJwtToken({ id: user.id})
       };
     }
+    
+  async checkAuthStatus( user: User ){
 
-    private getJwtToken( payload: JwtPayload ) {
+    return {
+      ...user,
+      token: this.getJwtToken({ id: user.id })
+    };
 
-      const token = this.jwtService.sign( payload );
-      return token;
-  
-    }
+  }
 
+  private getJwtToken( payload: JwtPayload ) {
+
+    const token = this.jwtService.sign( payload );
+    return token;
+
+  }
 
   // funtion user error one
   private handleDBErrors( error: any ): never {
@@ -85,7 +93,6 @@ export class AuthService {
     throw new InternalServerErrorException('Please check server logs');
 
   }
-
 
   
 }

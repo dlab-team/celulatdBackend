@@ -11,7 +11,7 @@ export class FavoriteController extends BaseController<Favorite> {
     constructor(private readonly favoriteService: FavoriteService) {
         super();
     }
-
+    
     getService(): BaseService<Favorite> {
         return this.favoriteService;
     }

@@ -8,8 +8,8 @@ export class User {
     [x: string]: any;
 
 
-    @PrimaryGeneratedColumn()
-    id: number;
+    @PrimaryGeneratedColumn('uuid')
+    id: string;
   
     @Column('varchar', { length: 50 })
     name: string;

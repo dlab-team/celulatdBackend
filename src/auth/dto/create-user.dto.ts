@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 
 import { IsEmail, IsString, Matches, MaxLength, MinLength } from 'class-validator';
 
@@ -5,7 +6,7 @@ export class CreateUserDto {
     @IsString()
     name: string;
 
-     @IsString()
+    @IsString()
     @IsEmail()
     email: string;
 
@@ -23,5 +24,5 @@ export class CreateUserDto {
 
     @IsString()
     photo: string;
- 
+
 }

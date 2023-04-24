@@ -10,9 +10,6 @@ import { View } from './view.entity';
 import { User } from 'src/auth/entities/user.entity';
 
 
-
-
-
 @Entity()
 export class Video {
   [x: string]: any;
