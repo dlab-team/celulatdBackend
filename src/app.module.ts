@@ -10,6 +10,7 @@ import { FavoriteModule } from './favorite/favorite.module';
 import { TrashModule } from './trash/trash.module';
 import { ViewModule } from './view/view.module';
 import { CountClickModule } from './count-click/count-click.module';
+import { ProvidersModule } from './providers/providers.module';
 
 @Module({
   imports: [
@@ -30,7 +31,8 @@ import { CountClickModule } from './count-click/count-click.module';
     NotificationModule,
     TrashModule,
     ViewModule,
-    CountClickModule
+    CountClickModule,
+    ProvidersModule
   ],
   controllers: [AppController],
   providers: [AppService],

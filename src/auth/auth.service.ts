@@ -31,7 +31,7 @@ export class AuthService {
 
       await this.userRepository.save( user )
       delete user.password;
-
+      console.log('antes de enviar la informacion al frontend')
       return {
         ...user,
         token: this.getJwtToken({ id: user.id})
