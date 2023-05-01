@@ -12,6 +12,7 @@ import { ViewModule } from './view/view.module';
 import { CountClickModule } from './count-click/count-click.module';
 import { ProvidersModule } from './providers/providers.module';
 import { AdminModule } from './admin/admin.module';
+import { DocumentsModule } from './documents/documents.module';
 
 
 
@@ -37,6 +38,7 @@ import { AdminModule } from './admin/admin.module';
     ViewModule,
     CountClickModule,
     ProvidersModule,
+    DocumentsModule,
     
   ],
   controllers: [AppController],

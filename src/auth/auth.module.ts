@@ -8,6 +8,7 @@ import { JwtModule } from '@nestjs/jwt';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { JwtStrategy } from './strategies/jwt.strategy';
 import { StadistUser } from 'src/entities/statistics-user';
+import { MenAdmin } from 'src/entities/mensage-administrator';
 
 
 @Module({
@@ -16,7 +17,7 @@ import { StadistUser } from 'src/entities/statistics-user';
   imports:[
     ConfigModule,
 
-    TypeOrmModule.forFeature([ User, StadistUser ]),
+    TypeOrmModule.forFeature([ User, StadistUser, MenAdmin ]),
 
     PassportModule.register({ defaultStrategy: 'jwt'}),
 
