@@ -1,7 +1,6 @@
 
 
 import { BeforeInsert, BeforeUpdate, Column, Entity, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
-import { Clickcount } from "src/entities/countclick.entity";
 import { Video } from "src/entities/video.entity";
 import { MenAdmin } from "src/entities/mensage-administrator";
 import { UserFavorites } from "src/entities/user-favorites";
@@ -29,11 +28,6 @@ export class User {
         () => Video, 
         (video)=> video.user)
         video: Video[];
-
-    @OneToMany(
-        () => Clickcount, 
-        (clickcount) => clickcount.user)
-        clickcount: Clickcount[];
 
     @OneToMany(
         () =>  MenAdmin, 
