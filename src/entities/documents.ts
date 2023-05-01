@@ -1,3 +1,4 @@
+import { User } from "src/auth/entities/user.entity";
 import {   Column, Entity,ManyToOne,PrimaryGeneratedColumn } from "typeorm";
 
 
@@ -15,5 +16,10 @@ export class Documents {
   description: string;
 
   
+  @ManyToOne(
+    () => User, 
+    user => user.id)
+    user: User;
+
 
 }

@@ -4,26 +4,24 @@ import {
     Entity,
     Column,
     PrimaryGeneratedColumn,
-    ManyToOne
+    ManyToOne,
+    OneToMany
   } from 'typeorm';
+import { Favorite } from './favorites';
  
   @Entity()
   export class UserFavorites {
     [x: string]: any;
   
-    @PrimaryGeneratedColumn()
-    id: number;
-  
-    @Column('varchar', { length: 50 })
-    usuario: string;
-  
-    @Column('varchar', { length: 50 })
-    favorites: string;
 
-    @ManyToOne(
-      () => User, 
-      user => user.id)
-      user: User;
+    @OneToMany(
+      () =>  Favorite, 
+      ( favorite) =>  favorite.user)
+      Favorite:  Favorite[];
+
+   
+  
+
   
   }
   

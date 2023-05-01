@@ -3,6 +3,8 @@ import { Video } from "src/entities/video.entity";
 import { BeforeInsert, BeforeUpdate, Column, Entity, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Notification } from "src/entities/notification.entity";
 import { MenAdmin } from "src/entities/mensage-administrator";
+import { UserFavorites } from "src/entities/user-favorites";
+import { StadistUser } from '../../entities/statistics-user';
 
 @Entity('users')
 export class User {
@@ -47,10 +49,15 @@ export class User {
         ( menAdmin) =>  menAdmin.user)
         menAdmin:  MenAdmin[];
 
-        @OneToMany(
-            () =>  UserFavorites, 
-            ( serFavorites) =>  serFavorites.user)
-            userFavorites:  UserFavorites[];
+    @OneToMany(
+        () =>  UserFavorites, 
+        ( userFavorites) =>  userFavorites.user)
+        userFavorites:  UserFavorites[];
+    
+    @OneToMany(
+        () =>  StadistUser, 
+        ( stadistUser) =>  stadistUser.user)
+        StadistUser:  StadistUser[];
     
 
 

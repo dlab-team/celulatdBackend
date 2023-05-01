@@ -1,6 +1,6 @@
 import { Controller } from "@nestjs/common";
 import { BaseController } from "src/commons/controller.commons";
-import { Favorite } from "src/entities/favorite.entity";
+import { Favorite } from "src/entities/favorites";
 import { BaseService } from "src/commons/service.commons";
 import { FavoriteService } from "../service/favorite.service";
 

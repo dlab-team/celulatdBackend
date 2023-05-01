@@ -22,9 +22,10 @@ export class MenAdmin {
     fecha:Date;
 
     
-    @ManyToOne(() => 
-    Admin, admin => admin.id)
-    admin: Admin;
+    @ManyToOne(
+        () => Admin, 
+        admin => admin.id)
+        admin: Admin;
 
     @ManyToOne(
         () => User, 

@@ -5,7 +5,7 @@ import {
   ManyToOne,
   OneToMany
 } from 'typeorm';
-import { Favorite } from './favorite.entity';
+import { Favorite } from './favorites';
 import { View } from './view.entity';
 import { User } from 'src/auth/entities/user.entity';
 
