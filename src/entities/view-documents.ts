@@ -8,7 +8,6 @@ import {
   } from 'typeorm';
   
   
-  
   @Entity()
   export class ViewDocuments{
     [x: string]: any;
@@ -27,7 +26,13 @@ import {
     @ManyToOne(
       () => Documents, 
       documents => documents.id)
-      documents: Documents;  
+      documents: Documents;
+    
+    @ManyToOne(
+      () => ViewDocuments, 
+      viewDocuments => viewDocuments.id)
+      viewDocuments: ViewDocuments;  
+      
     
     
     

@@ -1,4 +1,3 @@
-import { Favorite } from "src/entities/favorites";
 import { ViewDocuments } from "src/entities/view-documents";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
@@ -28,5 +27,7 @@ export class Documents {
       () =>  ViewDocuments, 
       (viewDocuments) => viewDocuments.id)
       viewDocuments: ViewDocuments[];
+
   
+
     }
