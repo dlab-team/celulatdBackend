@@ -13,8 +13,10 @@ export class Clickcount {
   @Column('int')
   number_click: number;  
   
-  @ManyToOne(() => User, user => user.id)
-  user: User;
+  @ManyToOne(
+    () => User, 
+    user => user.id)
+    user: User;
 
  
 

@@ -2,7 +2,6 @@
 import {  Column, Entity, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 import { MenAdmin } from "src/entities/mensage-administrator";
-import { AdminDto } from '../../dto/admin.dto';
 
 @Entity()
 export class Admin {
@@ -18,13 +17,10 @@ export class Admin {
     @Column('varchar', { length: 50 })
     email: string;
   
-    // @Column('varchar', { length: 12 })
-    // phone: string;
 
     @Column('varchar', { length: 100 })
     password: string;
     
-
 
     @OneToMany(
                () => MenAdmin ,

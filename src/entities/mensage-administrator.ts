@@ -1,7 +1,6 @@
 
 import { Admin } from "src/auth/entities/administrator";
 import { User } from "src/auth/entities/user.entity";
-import { Video } from "src/entities/video.entity";
 import {  Column, Entity, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 
@@ -26,6 +25,11 @@ export class MenAdmin {
     @ManyToOne(() => 
     Admin, admin => admin.id)
     admin: Admin;
+
+    @ManyToOne(
+        () => User, 
+        user => user.id)
+        user: User;
 
   
 }

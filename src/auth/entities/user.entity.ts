@@ -27,17 +27,31 @@ export class User {
     // @Column('varchar', { length: 500 })
     // photo: string;
 
-    @OneToMany(() => Video, (video) => video.user)
-    video: Video[];
+    @OneToMany(
+        () => Video, 
+        (video)=> video.user)
+        video: Video[];
 
-    @OneToMany(() => Notification, (notification) => notification.user)
-    notification: Notification[];
+    @OneToMany(
+        () => Notification, 
+        (notification) => notification.user)
+        notification: Notification[];
     
-    @OneToMany(() => Clickcount, (clickcount) => clickcount.user)
-    clickcount: Clickcount[];
+    @OneToMany(
+        () => Clickcount, 
+        (clickcount) => clickcount.user)
+        clickcount: Clickcount[];
 
-   
+    @OneToMany(
+        () =>  MenAdmin, 
+        ( menAdmin) =>  menAdmin.user)
+        menAdmin:  MenAdmin[];
 
+        @OneToMany(
+            () =>  UserFavorites, 
+            ( serFavorites) =>  serFavorites.user)
+            userFavorites:  UserFavorites[];
+    
 
 
     @BeforeInsert()

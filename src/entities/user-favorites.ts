@@ -1,13 +1,14 @@
 
+import { User } from 'src/auth/entities/user.entity';
 import {
     Entity,
     Column,
     PrimaryGeneratedColumn,
-    OneToMany,
+    ManyToOne
   } from 'typeorm';
  
   @Entity()
-  export class Admin {
+  export class UserFavorites {
     [x: string]: any;
   
     @PrimaryGeneratedColumn()
@@ -19,9 +20,10 @@ import {
     @Column('varchar', { length: 50 })
     favorites: string;
 
-
+    @ManyToOne(
+      () => User, 
+      user => user.id)
+      user: User;
   
-  
-
   }
   
