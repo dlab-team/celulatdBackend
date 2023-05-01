@@ -1,6 +1,5 @@
 
-import { Admin } from "src/auth/entities/administrator";
-import { User } from "src/auth/entities/user.entity";
+
 import {  Column, Entity, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 
@@ -22,15 +21,15 @@ export class MenAdmin {
     fecha:Date;
 
     
-    @ManyToOne(
-        () => Admin, 
-        admin => admin.id)
-        admin: Admin;
+    // @ManyToOne(
+    //     () => Admin, 
+    //     admin => admin.id)
+    //     admin: Admin;
 
-    @ManyToOne(
-        () => User, 
-        user => user.id)
-        user: User;
+    // @ManyToOne(
+    //     () => User, 
+    //     user => user.id)
+    //     user: User;
 
   
 }

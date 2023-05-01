@@ -11,6 +11,9 @@ import { TrashModule } from './trash/trash.module';
 import { ViewModule } from './view/view.module';
 import { CountClickModule } from './count-click/count-click.module';
 import { ProvidersModule } from './providers/providers.module';
+import { AdminModule } from './admin/admin.module';
+
+
 
 @Module({
   imports: [
@@ -26,13 +29,15 @@ import { ProvidersModule } from './providers/providers.module';
       synchronize: true,
     }),
     AuthModule,
+    AdminModule,
     VideoModule,
     FavoriteModule,
     NotificationModule,
     TrashModule,
     ViewModule,
     CountClickModule,
-    ProvidersModule
+    ProvidersModule,
+    
   ],
   controllers: [AppController],
   providers: [AppService],

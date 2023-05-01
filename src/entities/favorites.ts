@@ -11,7 +11,6 @@ export class Favorite {
   @Column({ type: 'timestamptz', nullable: true })
   date_favorites: Date;
 
-  
 
 
   @Column({ type: 'timestamptz', nullable: true })

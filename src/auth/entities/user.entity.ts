@@ -1,11 +1,10 @@
+
+
+import { BeforeInsert, BeforeUpdate, Column, Entity, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+
+import { Notification } from "src/entities/notification.entity";
 import { Clickcount } from "src/entities/countclick.entity";
 import { Video } from "src/entities/video.entity";
-import { BeforeInsert, BeforeUpdate, Column, Entity, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
-import { Notification } from "src/entities/notification.entity";
-import { MenAdmin } from "src/entities/mensage-administrator";
-import { UserFavorites } from "src/entities/user-favorites";
-import { StadistUser } from '../../entities/statistics-user';
-
 @Entity('users')
 export class User {
     [x: string]: any;
@@ -44,20 +43,20 @@ export class User {
         (clickcount) => clickcount.user)
         clickcount: Clickcount[];
 
-    @OneToMany(
-        () =>  MenAdmin, 
-        ( menAdmin) =>  menAdmin.user)
-        menAdmin:  MenAdmin[];
+    // @OneToMany(
+    //     () =>  MenAdmin, 
+    //     ( menAdmin) =>  menAdmin.user)
+    //     menAdmin:  MenAdmin[];
 
-    @OneToMany(
-        () =>  UserFavorites, 
-        ( userFavorites) =>  userFavorites.user)
-        userFavorites:  UserFavorites[];
+    // @OneToMany(
+    //     () =>  UserFavorites, 
+    //     ( userFavorites) =>  userFavorites.user)
+    //     userFavorites:  UserFavorites[];
     
-    @OneToMany(
-        () =>  StadistUser, 
-        ( stadistUser) =>  stadistUser.user)
-        StadistUser:  StadistUser[];
+    // @OneToMany(
+    //     () =>  StadistUser, 
+    //     ( stadistUser) =>  stadistUser.user)
+    //     StadistUser:  StadistUser[];
     
 
 
