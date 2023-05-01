@@ -30,7 +30,13 @@ export class Favorite {
   @ManyToOne(
     () => Documents, 
     documents => documents.id)
-    documents: Documents;  
+    documents: Documents; 
+    
+  @ManyToOne(
+    () => Favorite, 
+    favorite=> favorite.id)
+    favorite: Favorite; 
+  
   
   
 
