@@ -1,7 +1,8 @@
 import { Clickcount } from "src/entities/countclick.entity";
 import { Video } from "src/entities/video.entity";
-import { BeforeInsert, BeforeUpdate, Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { BeforeInsert, BeforeUpdate, Column, Entity, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Notification } from "src/entities/notification.entity";
+import { MenAdmin } from "src/entities/mensage-administrator";
 
 @Entity('users')
 export class User {
@@ -34,6 +35,9 @@ export class User {
     
     @OneToMany(() => Clickcount, (clickcount) => clickcount.user)
     clickcount: Clickcount[];
+
+   
+
 
 
     @BeforeInsert()

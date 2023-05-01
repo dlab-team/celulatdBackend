@@ -16,5 +16,6 @@ export class Clickcount {
   @ManyToOne(() => User, user => user.id)
   user: User;
 
+ 
 
 }
