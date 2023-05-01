@@ -6,8 +6,9 @@ import {
   OneToMany
 } from 'typeorm';
 import { Favorite } from './favorites';
-import { View } from './view.entity';
+
 import { User } from 'src/auth/entities/user.entity';
+import { View } from './view';
 
 
 @Entity()

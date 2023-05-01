@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { ViewService } from './service/view.service';
 import { ViewController } from './controller/view.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { View } from 'src/entities/view.entity';
+import { View } from 'src/entities/view';
 import { Video } from 'src/entities/video.entity';
 
 @Module({

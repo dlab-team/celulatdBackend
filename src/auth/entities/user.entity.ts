@@ -23,14 +23,9 @@ export class User {
     @Column('varchar', { length: 50 })
     email: string;
   
-    // @Column('varchar', { length: 12 })
-    // phone: string;
-
     @Column('varchar', { length: 100 })
     password: string;
     
-    // @Column('varchar', { length: 500 })
-    // photo: string;
 
     @OneToMany(
         () => Video, 

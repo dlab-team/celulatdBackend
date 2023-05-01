@@ -1,4 +1,4 @@
-import { View } from "src/entities/view.entity";
+import { View } from "src/entities/view";
 import { ViewService } from "../service/view.service";
 import { BaseController } from "src/commons/controller.commons";
 import { Controller } from "@nestjs/common";
