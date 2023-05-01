@@ -1,7 +1,9 @@
+import { Documents } from 'src/documents/entities/document.entity';
 import {
     Entity,
     Column,
     PrimaryGeneratedColumn,
+    ManyToOne,
     
   } from 'typeorm';
   
@@ -22,6 +24,11 @@ import {
     @Column({ type: 'timestamptz', nullable: true })
     date_publication: Date;
   
+    @ManyToOne(
+      () => Documents, 
+      documents => documents.id)
+      documents: Documents;  
+    
     
     
   }

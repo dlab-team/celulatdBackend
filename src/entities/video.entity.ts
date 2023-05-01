@@ -41,7 +41,7 @@ export class Video {
 
   @OneToMany(() => Favorite, (favorite) => favorite.video)
   favorite: Favorite[];
-  
+
 }
 
  

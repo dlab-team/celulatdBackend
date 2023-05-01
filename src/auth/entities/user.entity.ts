@@ -52,6 +52,11 @@ export class User {
         () =>  StadistUser, 
         ( stadistUser) =>  stadistUser.user)
         StadistUser:  StadistUser[];
+
+    @OneToMany(
+        () =>  UserFavorites, 
+        (userFavorites) =>  userFavorites.user)
+        userFavorites:  UserFavorites[];
     
 
 

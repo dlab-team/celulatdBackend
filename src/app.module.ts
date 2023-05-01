@@ -7,7 +7,6 @@ import { AuthModule } from './auth/auth.module';
 import { VideoModule } from './video/video.module';
 import { NotificationModule } from './notification/notification.module';
 import { FavoriteModule } from './favorite/favorite.module';
-import { TrashModule } from './trash/trash.module';
 import { ViewModule } from './view/view.module';
 import { CountClickModule } from './count-click/count-click.module';
 import { ProvidersModule } from './providers/providers.module';
@@ -34,7 +33,6 @@ import { DocumentsModule } from './documents/documents.module';
     VideoModule,
     FavoriteModule,
     NotificationModule,
-    TrashModule,
     ViewModule,
     CountClickModule,
     ProvidersModule,

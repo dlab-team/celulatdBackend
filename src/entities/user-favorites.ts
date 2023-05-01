@@ -8,19 +8,25 @@ import {
     OneToMany
   } from 'typeorm';
 import { Favorite } from './favorites';
+
  
   @Entity()
   export class UserFavorites {
     [x: string]: any;
+    @PrimaryGeneratedColumn()
+    id: number
   
-
+    @ManyToOne(
+      () => User, 
+      user => user.id)
+      user: User;
+  
     @OneToMany(
       () =>  Favorite, 
-      ( favorite) =>  favorite.user)
-      Favorite:  Favorite[];
+      ( favorite) =>  favorite.id)
+      favorite:  Favorite[];
 
-   
-  
+      
 
   
   }

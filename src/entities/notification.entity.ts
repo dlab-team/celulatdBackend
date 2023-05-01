@@ -1,5 +1,4 @@
 import { Column, Entity, JoinColumn, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
-import { Trash } from "./trash.entity";
 import { User } from "src/auth/entities/user.entity";
 
 
@@ -18,10 +17,6 @@ export class Notification {
   
   @ManyToOne(() => User, user => user.notification)
   user: User;
-
-  @OneToOne(() => Trash)
-  @JoinColumn({ name: 'trash' })
-  trash: Trash;
 
   @Column({ type: 'timestamptz', nullable: true })
   date_send: Date;

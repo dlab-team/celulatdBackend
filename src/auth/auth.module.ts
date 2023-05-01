@@ -9,6 +9,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { JwtStrategy } from './strategies/jwt.strategy';
 import { StadistUser } from 'src/entities/statistics-user';
 import { MenAdmin } from 'src/entities/mensage-administrator';
+import { UserFavorites } from 'src/entities/user-favorites';
 
 
 @Module({
@@ -17,7 +18,7 @@ import { MenAdmin } from 'src/entities/mensage-administrator';
   imports:[
     ConfigModule,
 
-    TypeOrmModule.forFeature([ User, StadistUser, MenAdmin ]),
+    TypeOrmModule.forFeature([ User, StadistUser, MenAdmin, UserFavorites ]),
 
     PassportModule.register({ defaultStrategy: 'jwt'}),
 

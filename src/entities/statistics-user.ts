@@ -25,8 +25,6 @@ export class StadistUser {
   
     @Column('int')
     fullViewIncomp: number;
-  
- 
 
     @ManyToOne(
         () => User, 

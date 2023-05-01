@@ -1,4 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Favorite } from "src/entities/favorites";
+import { ViewDocuments } from "src/entities/view-documents";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Documents {
@@ -22,4 +24,9 @@ export class Documents {
     @Column({ type: 'timestamptz', nullable: true })
     date_publication: Date;
 
-}
+    @OneToMany(
+      () =>  ViewDocuments, 
+      (viewDocuments) => viewDocuments.id)
+      viewDocuments: ViewDocuments[];
+  
+    }
