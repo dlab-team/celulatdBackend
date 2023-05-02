@@ -1,23 +1,19 @@
-import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { ConfigModule } from '@nestjs/config';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { AuthModule } from './auth/auth.module';
-import { VideoModule } from './video/video.module';
-import { FavoriteModule } from './favorite/favorite.module';
-import { ViewModule } from './view/view.module';
-import { ProvidersModule } from './providers/providers.module';
-import { AdminModule } from './admin/admin.module';
-import { DocumentsModule } from './documents/documents.module';
-
-
+import { Module } from "@nestjs/common";
+import { AppController } from "./app.controller";
+import { AppService } from "./app.service";
+import { ConfigModule } from "@nestjs/config";
+import { TypeOrmModule } from "@nestjs/typeorm";
+import { AuthModule } from "./auth/auth.module";
+import { FavoriteModule } from "./favorite/favorite.module";
+import { ProvidersModule } from "./providers/providers.module";
+import { AdminModule } from "./admin/admin.module";
+import { Resource } from "./entities/resourse.entity";
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
-      type: 'postgres',
+      type: "postgres",
       host: process.env.DB_HOST,
       port: +process.env.DB_PORT,
       database: process.env.DB_NAME,
@@ -28,14 +24,13 @@ import { DocumentsModule } from './documents/documents.module';
     }),
     AuthModule,
     AdminModule,
-    VideoModule,
     FavoriteModule,
-    ViewModule,
     ProvidersModule,
-    DocumentsModule,
-    
+    Resource,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule { }
+export class AppModule {}
+
+//TODO Agregar-resourse-message-userSatadist
