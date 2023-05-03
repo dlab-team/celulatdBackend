@@ -1,46 +1,38 @@
-import { Module } from '@nestjs/common';
-import { AuthService } from './auth.service';
-import { AuthController } from './auth.controller';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from './entities/user.entity';
-import { PassportModule } from '@nestjs/passport';
-import { JwtModule } from '@nestjs/jwt';
-import { ConfigModule, ConfigService } from '@nestjs/config';
-import { JwtStrategy } from './strategies/jwt.strategy';
-import { StadistUser } from 'src/entities/statistics-user';
-import { MenAdmin } from 'src/entities/mensage-administrator';
-import { UserFavorites } from 'src/entities/user-favorites';
-
+import { Module } from "@nestjs/common";
+import { AuthService } from "./auth.service";
+import { AuthController } from "./auth.controller";
+import { TypeOrmModule } from "@nestjs/typeorm";
+import { User } from "./entities/user.entity";
+import { PassportModule } from "@nestjs/passport";
+import { JwtModule } from "@nestjs/jwt";
+import { ConfigModule, ConfigService } from "@nestjs/config";
+import { JwtStrategy } from "./strategies/jwt.strategy";
+import { UserStats } from "../entities/userStadist.entity";
+import { Favorite } from "../entities/favorites.entity";
 
 @Module({
   controllers: [AuthController],
   providers: [AuthService, JwtStrategy],
-  imports:[
+  imports: [
     ConfigModule,
 
-    TypeOrmModule.forFeature([ User, StadistUser, MenAdmin, UserFavorites ]),
+    TypeOrmModule.forFeature([User, UserStats, UserStats, Favorite]),
 
-    PassportModule.register({ defaultStrategy: 'jwt'}),
-
+    PassportModule.register({ defaultStrategy: "jwt" }),
 
     JwtModule.registerAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
-      useFactory: ( configService: ConfigService ) => {
-        // console.log('JWT Secret', configService.get('JWT_SECRET'))
-        // console.log('JWT SECRET', process.env.JWT_SECRET)
+      useFactory: (configService: ConfigService) => {
         return {
-          secret: configService.get('JWT_SECRET'),
+          secret: configService.get("JWT_SECRET"),
           signOptions: {
-            expiresIn:'2h'
-          }
-        }
-      }
-    })
-    
-    
+            expiresIn: "2h",
+          },
+        };
+      },
+    }),
   ],
-  exports:[TypeOrmModule, JwtStrategy, PassportModule, JwtModule]
-
+  exports: [TypeOrmModule, JwtStrategy, PassportModule, JwtModule],
 })
 export class AuthModule {}
