@@ -1,11 +1,8 @@
 import {
   Column,
   Entity,
-  JoinTable,
-  ManyToMany,
-  ManyToOne,
-  OneToMany,
-  PrimaryGeneratedColumn,
+  ManyToOne, OneToMany,
+  PrimaryGeneratedColumn
 } from "typeorm";
 import { Admin } from "./admin.entity";
 import { Favorite } from "./favorites.entity";
@@ -26,4 +23,10 @@ export class Resource {
 
   @Column()
   type: string;
+
+  @ManyToOne(() => Admin, (admin) => admin.resources)
+  createdBy: Admin;
+
+  @OneToMany(() => Favorite, (favorite) => favorite.resource)
+  favorites: Favorite[];
 }

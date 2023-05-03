@@ -1,5 +1,6 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Resource } from "./resourse.entity";
+import { Message } from "./message.entity";
 
 @Entity("admin")
 export class Admin {
@@ -16,4 +17,7 @@ export class Admin {
 
   @Column("varchar", { length: 100 })
   password: string;
+
+  @OneToMany(() => Message, (message) => message.sender)
+  messages: Message[];
 }

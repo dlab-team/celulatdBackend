@@ -7,8 +7,8 @@ import { PassportModule } from "@nestjs/passport";
 import { JwtModule } from "@nestjs/jwt";
 import { ConfigModule, ConfigService } from "@nestjs/config";
 import { JwtStrategy } from "./strategies/jwt.strategy";
-import { Favorite } from "src/entities/favorites.entity";
 import { UserStats } from "../entities/userStadist.entity";
+import { Favorite } from "../entities/favorites.entity";
 
 @Module({
   controllers: [AuthController],
@@ -24,8 +24,6 @@ import { UserStats } from "../entities/userStadist.entity";
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => {
-        // console.log('JWT Secret', configService.get('JWT_SECRET'))
-        // console.log('JWT SECRET', process.env.JWT_SECRET)
         return {
           secret: configService.get("JWT_SECRET"),
           signOptions: {

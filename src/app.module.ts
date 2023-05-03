@@ -7,7 +7,8 @@ import { AuthModule } from "./auth/auth.module";
 import { FavoriteModule } from "./favorite/favorite.module";
 import { ProvidersModule } from "./providers/providers.module";
 import { AdminModule } from "./admin/admin.module";
-import { Resource } from "./entities/resourse.entity";
+import { ResourceModule } from "./resource/resource.module";
+import { MessageModule } from "./message/message.module";
 
 @Module({
   imports: [
@@ -26,7 +27,8 @@ import { Resource } from "./entities/resourse.entity";
     AdminModule,
     FavoriteModule,
     ProvidersModule,
-    Resource,
+    ResourceModule,
+    MessageModule,
   ],
   controllers: [AppController],
   providers: [AppService],

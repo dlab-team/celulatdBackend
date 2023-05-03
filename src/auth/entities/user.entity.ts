@@ -8,8 +8,8 @@ import {
 } from "typeorm";
 
 import { Favorite } from "../../entities/favorites.entity";
-import { Message } from "../../entities/message.entity";
 import { UserStats } from "../../entities/userStadist.entity";
+import { Message } from "../../entities/message.entity";
 
 @Entity("users")
 export class User {
@@ -27,6 +27,14 @@ export class User {
   @Column("varchar", { length: 100 })
   password: string;
 
+  @OneToMany(() => Message, (message) => message.recipient)
+  messages: Message[];
+
+  @OneToMany(() => Favorite, (favorite) => favorite.user)
+  favorites: Favorite[];
+
+  @OneToMany(() => UserStats, (stats) => stats.user)
+  statistics: UserStats[];
 
   @BeforeInsert()
   checkFieldsBeforeInsert() {

@@ -12,6 +12,9 @@ export class UserStats {
   @Column({ default: 0 })
   abandonedVideos: number;
 
+  @ManyToOne(() => User, (user) => user.statistics)
+  user: User;
+
   @Column({ type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
   updatedAt: Date;
 }

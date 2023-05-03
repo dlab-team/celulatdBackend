@@ -1,10 +1,4 @@
-import {
-  Column,
-  Entity,
-  JoinColumn,
-  ManyToOne,
-  PrimaryGeneratedColumn,
-} from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { User } from "../auth/entities/user.entity";
 import { Resource } from "./resourse.entity";
 
@@ -17,4 +11,10 @@ export class Favorite {
 
   @Column({ type: "timestamptz", nullable: true })
   timestamp: Date;
+
+  @ManyToOne(() => User, (user) => user.favorites)
+  user: User;
+
+  @ManyToOne(() => Resource, (resource) => resource.favorites)
+  resource: Resource;
 }
